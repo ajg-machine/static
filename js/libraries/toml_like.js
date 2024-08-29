@@ -199,13 +199,13 @@ function matchEntryKey(characters, start, level) {
     if (start === "[") {
         if (level !== "FIRST_LEVEL") {
             let key = `${start}${match[0]}${match[1]}`;
-            let message = `entry key ${formatRepr(key)} invalid `;
+            let message = `key ${formatRepr(key)} invalid `;
             message += `([...] syntax for keys only expected at first level)`;
             throw new ConfigError(message);
         }
         if (match[1] !== "]") {
             let key = `${start}${match[0]}${match[1]}`;
-            let message = `entry key ${formatRepr(key)} invalid `;
+            let message = `key ${formatRepr(key)} invalid `;
             message += `(delimiter ${formatRepr(match[1])} `;
             message += `reached before ${formatRepr("]")})`;
             throw new ConfigError(message);
@@ -216,7 +216,7 @@ function matchEntryKey(characters, start, level) {
     }
     if (!match[0]) {
         let key = `${start}${match[0]}${match[1]}`;
-        let message = `entry key ${formatRepr(key)} invalid (blank)`;
+        let message = `key ${formatRepr(key)} invalid (blank)`;
         throw new ConfigError(message);
     }
     return [match[0], match[1], "KEY"];
