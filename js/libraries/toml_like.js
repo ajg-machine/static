@@ -110,7 +110,7 @@ function formatRepr(value) {
 }
 
 
-function matchUntil(characters, delimiters, {endOfInput=false, trim=false}={}) {
+function matchUntil(characters, delimiters, {endOfInput=false}={}) {
     let result = [];
     let isEscaped = false;
     let character = characters.next();
@@ -123,7 +123,7 @@ function matchUntil(characters, delimiters, {endOfInput=false, trim=false}={}) {
             isEscaped = true;
         } else if (delimiters.includes(character)) {
             result = result.join("");
-            return [trim ? result.trim() : result, character];
+            return [result, character];
         } else {
             result.push(character);
         }
@@ -131,7 +131,7 @@ function matchUntil(characters, delimiters, {endOfInput=false, trim=false}={}) {
     }
     if (!endOfInput) throw new ConfigError("unexpected end of input");
     result = result.join("");
-    return [trim ? result.trim() : result, ""];
+    return [result, ""];
 }
 
 
@@ -168,7 +168,7 @@ function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
             return ["", start, "LIST_END"];
         } else if (entryKey) {
             checkMatch(expected, start, "KEY");
-            return matchEntryKey(characters, start, entryKey);
+            return matchKey(characters, start, entryKey);
         } else if (start.match(/['"]/)) {
             checkMatch(expected, start, "VALUE", "string");
             return matchString(characters, start);
@@ -194,17 +194,17 @@ function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
 }
 
 
-function matchEntryKey(characters, start, level) {
-    let match = matchUntil(characters, DELIMITERS, {endOfInput: true, trim: true});
+function matchKey(characters, start, level) {
+    let match = matchUntil(characters, DELIMITERS, {endOfInput: true});
     if (start === "[") {
         if (level !== "FIRST_LEVEL") {
-            let key = `${start}${match[0]}${match[1]}`;
+            let key = `${start}${match[0].trim()}${match[1]}`;
             let message = `key ${formatRepr(key)} invalid `;
             message += `([...] syntax for keys only expected at first level)`;
             throw new ConfigError(message);
         }
         if (match[1] !== "]") {
-            let key = `${start}${match[0]}${match[1]}`;
+            let key = `${start}${match[0].trim()}${match[1]}`;
             let message = `key ${formatRepr(key)} invalid `;
             message += `(delimiter ${formatRepr(match[1])} `;
             message += `reached before ${formatRepr("]")})`;
@@ -215,7 +215,7 @@ function matchEntryKey(characters, start, level) {
         start = "";
     }
     if (!match[0]) {
-        let key = `${start}${match[0]}${match[1]}`;
+        let key = `${start}${match[1]}`;
         let message = `key ${formatRepr(key)} invalid (blank)`;
         throw new ConfigError(message);
     }
@@ -230,9 +230,9 @@ function matchString(characters, delimiter) {
 
 
 function matchNumber(characters, start) {
-    let [raw, end] = matchUntil(characters, DELIMITERS, {endOfInput: true, trim: true});
+    let [raw, end] = matchUntil(characters, DELIMITERS, {endOfInput: true});
     let sign = start === "-" ? -1 : 1;
-    if (start !== "-" && start !== "+") raw = `${start}${raw}`;
+    raw = `${start === "-" || start === "+" ? "" : start}${raw}`.trim();
     if (raw.search(/[-+:/utc]/i) > -1) return matchDate(raw, end);
     raw = raw.replace(/_(\d{3})/g, "$1").replace(/ (\d{3})/g, "$1").toUpperCase();
     if (raw.match(/^(NA|NAN|N\/A)$/)) return [sign * NaN, end, "VALUE"];
@@ -271,7 +271,7 @@ function matchDate(raw, end) {
 
 
 function matchKeyword(characters, start) {
-    let [raw, end] = matchUntil(characters, DELIMITERS, {endOfInput: true, trim: true});
+    let [raw, end] = matchUntil(characters, DELIMITERS, {endOfInput: true});
     raw = `${start}${raw}`.trim().toUpperCase();
     let keyword = {
         "TRUE": true, "FALSE": false, "NULL": null,
@@ -356,7 +356,8 @@ function matchEntries(characters) {
             continue;
         } else if (entryKey[1] !== "=") {
             let message = `assignment character ${formatRepr("=")} `;
-            message += `expected but ${formatRepr(entryKey[1])} reached`;
+            message += `expected but ${formatRepr(entryKey[1])} reached `;
+            message += `at entry ${formatRepr(entryKey[0])}`;
             throw new ConfigError(message);
         }
         expected = ["VALUE"];
