@@ -147,7 +147,9 @@ function checkMatch(expected, character, type) {
         : `${expected}`;
     expected = expected.replace(/_/g, " ").toLowerCase();
     type = type.replace(/_/g, " ").toLowerCase();
-    let message = character === ""
+    let message = type === "unknown"
+        ? `${repr(character)} reached`
+        : character === ""
         ? `${type} reached`
         : `${type} ${repr(character)} reached`;
     throw new ConfigError(`${expected} expected but ${message}`);
@@ -195,7 +197,7 @@ function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
             checkMatch(expected, start, "VALUE");
             return matchMap(characters);
         } else {
-            checkMatch(expected, start, "INVALID_CHARACTER");
+            checkMatch(expected, start, "UNKNOWN");
         }
     }
     checkMatch(expected, "", "INPUT_END");
