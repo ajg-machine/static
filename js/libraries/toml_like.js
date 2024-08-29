@@ -110,7 +110,7 @@ function formatRepr(value) {
 }
 
 
-function matchUntil(characters, delimiters, allowEnd=false) {
+function matchUntil(characters, delimiters, {endOfInput=false, trim=false}={}) {
     let result = [];
     let isEscaped = false;
     let character = characters.next();
@@ -122,120 +122,126 @@ function matchUntil(characters, delimiters, allowEnd=false) {
         } else if (character === "\\") {
             isEscaped = true;
         } else if (delimiters.includes(character)) {
-            return [result.join(""), character];
+            result = result.join("");
+            return [trim ? result.trim() : result, character];
         } else {
             result.push(character);
         }
         character = characters.next();
     }
-    if (allowEnd) return [result.join(""), ""];
-    throw new ConfigError("unexpected end of input (delimiter expected)");
+    if (!endOfInput) throw new ConfigError("unexpected end of input");
+    result = result.join("");
+    return [trim ? result.trim() : result, ""];
 }
 
 
-function matchNext(characters, allowEnd=false) {
-    let character = characters.next();
-    while (!character.done) {
-        character = character.value;
-        if (!character.match(/\s/)) return character;
-        character = characters.next();
-    }
-    if (!allowEnd) throw new ConfigError("unexpected end of input");
+function checkMatch(allowed, character, type, subType=null) {
+    if (allowed.includes(type)) return;
+    if (subType) type = `${type} as ${subType}`;
+    let message = character == ""
+        ? `${type} reached`
+        : `character ${formatRepr(character)} (${type}) reached`;
+    throw new ConfigError(`${message} but only ${allowed.join(" ")} allowed`);
 }
 
 
-function matchEntries(characters) {
-    let result = new Map();
-    let target = result;
-    while (true) {
-        let key = matchUntil(characters, DELIMITERS, true);
-        key[0] = key[0].trim();
-        if (!key[1]) {
-            if (key[0]) throw new ConfigError(`input ${formatRepr(key[0])} unexpected`);
-            break;
-        } else if (key[1] === "\n" && !key[0]) {
-            continue;
-        } else if (key[1] === "#" && !key[0]) {
-            matchUntil(characters, "\n", true);
-            continue;
-        } else if (key[1] === "[") {
-            if (key[0]) throw new ConfigError(`input ${formatRepr(key[0])} unexpected`);
-            key = matchUntil(characters, DELIMITERS, true);
-            key[0] = key[0].trim()
-            if (key[1] !== "]") {
-                throw new ConfigError(`special character ${formatRepr(key[1])} unexpected at key starting with ${formatRepr(key[0])}`);
+function matchNext(characters, {allowed=[], entryKey, start, newLine}={}) {
+    // ENTRY_VALUE ENTRY_KEY LIST_SEPARATOR END_OF_LIST END_OF_LINE END_OF_INPUT
+    start = start ? {value: start, done: false} : characters.next();
+    while (!start.done) {
+        start = start.value;
+        if (start.match(/[\n#]/)) {
+            checkMatch(allowed, start, "END_OF_LINE");
+            if (start.match(/[#]/)) {
+                matchUntil(characters, "\n", {endOfInput: true});
             }
-            target = new Map();
-            result.set(key[0], target);
+            if (newLine) return ["", "\n", "END_OF_LINE"];
+            start = characters.next();
             continue;
-        } else if (key[1] !== "=") {
-            throw new ConfigError(`special character ${formatRepr(key[1])} unexpected at key starting with ${formatRepr(key[0])}`);
+        } else if (start.match(/\s/)) {
+            start = characters.next();
+            continue;
+        } else if (start.match(/[,]/)) {
+            checkMatch(allowed, start, "LIST_SEPARATOR");
+            return ["", start, "LIST_SEPARATOR"];
+        } else if (start.match(/[\]\)\}]/)) {
+            checkMatch(allowed, start, "END_OF_LIST");
+            return ["", start, "END_OF_LIST"];
+        } else if (entryKey) {
+            checkMatch(allowed, start, "ENTRY_KEY");
+            return matchEntryKey(characters, start, entryKey);
+        } else if (start.match(/['"]/)) {
+            checkMatch(allowed, start, "ENTRY_VALUE", "string");
+            return matchString(characters, start);
+        } else if (start.match(/[0-9.+-]/)) {
+            checkMatch(allowed, start, "ENTRY_VALUE", "number");
+            return matchNumber(characters, start);
+        } else if (start.match(/[a-z_]/i)) {
+            checkMatch(allowed, start, "ENTRY_VALUE", "keyword");
+            return matchKeyword(characters, start);
+        } else if (start.match(/[\[\(]/)) {
+            checkMatch(allowed, start, "ENTRY_VALUE", "array");
+            return matchArray(characters, start);
+        } else if (start.match(/[\{]/)) {
+            checkMatch(allowed, start, "ENTRY_VALUE", "map");
+            return matchMap(characters);
+        } else {
+            let message = `invalid character ${formatRepr(start)} reached`;
+            throw new ConfigError(`${message} (only ${allowed.join(" ")} allowed)`);
         }
-        let value = matchValue(characters)
-        if (!value[1]) {
-            let over = matchUntil(characters, DELIMITERS, true);
-            over[0] = over[0].trim();
-            if (over[0]) throw new ConfigError(`input ${formatRepr(over[0])} unexpected at key ${formatRepr(key[0])}`);
-            value[1] = over[1];
-        }
-        if (value[1] === "#") {
-            matchUntil(characters, "\n", true);
-        } else if (value[1] && !"\n;".includes(value[1])) {
-            throw new ConfigError(`special character ${formatRepr(value[1])} unexpected at key ${formatRepr(key[0])}`);
-        }
-        target.set(key[0], value[0]);
     }
-    return result;
+    checkMatch(allowed, "", "END_OF_INPUT");
+    return ["", "", "END_OF_INPUT"];
 }
 
 
-function matchValue(characters, allowEndOfArray=false, isKey=false) {
-    let start = matchNext(characters);
-    if (allowEndOfArray && start.match(/[\]\)\}]/)) {
-        return [null, start, "END_OF_ITERABLE"];
-    } else if (isKey) {
-        return matchKey(characters, start);
-    } else if (start.match(/['"]/)) {
-        return matchString(characters, start);
-    } else if (start.match(/[0-9.+-]/)) {
-        return matchNumber(characters, start);
-    } else if (start.match(/[a-z_]/i)) {
-        return matchKeyword(characters, start);
-    } else if (start.match(/[\[\(]/)) {
-        return matchArray(characters, start);
-    } else if (start.match(/[\{]/)) {
-        return matchMap(characters);
+function matchEntryKey(characters, start, level) {
+    let match = matchUntil(characters, DELIMITERS, {endOfInput: true, trim: true});
+    if (start === "[") {
+        if (level !== "FIRST_LEVEL") {
+            let key = `${start}${match[0]}${match[1]}`;
+            let message = `entry key ${formatRepr(key)} invalid `;
+            message += `([...] syntax for keys only allowed at first level)`;
+            throw new ConfigError(message);
+        }
+        if (match[1] !== "]") {
+            let key = `${start}${match[0]}${match[1]}`;
+            let message = `entry key ${formatRepr(key)} invalid `;
+            message += `(delimiter ${formatRepr(match[1])} `;
+            message += `reached before ${formatRepr("]")})`;
+            throw new ConfigError(message);
+        }
     } else {
-        throw new ConfigError(`unable to infer type of element starting with ${formatRepr(start)}`);
+        match[0] = `${start}${match[0]}`.trim();
+        start = "";
     }
-}
-
-
-function matchKey(characters, start) {
-    let result = matchUntil(characters, DELIMITERS, true);
-    result[0] = `${start}${result[0]}`.trim();
-    if (!result[0].length) throw new ConfigError("key missing");
-    return [result[0], result[1], "KEY"];
+    if (!match[0]) {
+        let key = `${start}${match[0]}${match[1]}`;
+        let message = `entry key ${formatRepr(key)} invalid (blank)`;
+        throw new ConfigError(message);
+    }
+    return [match[0], match[1], "ENTRY_KEY"];
 }
 
 
 function matchString(characters, delimiter) {
-    let result = matchUntil(characters, delimiter);
-    return [result[0], "", "STRING"];
+    let match = matchUntil(characters, delimiter);
+    return [match[0], "", "ENTRY_VALUE"];
 }
 
 
 function matchNumber(characters, start) {
-    let [result, end] = matchUntil(characters, DELIMITERS, true);
+    let [raw, end] = matchUntil(characters, DELIMITERS, {endOfInput: true, trim: true});
     let sign = start === "-" ? -1 : 1;
-    if (start !== "-" && start !== "+") result = `${start}${result}`;
-    if (result.search(/[-/]/) > -1) return matchDate(result, end);
-    result = result.replace(/_/g, "").replace(/ /g, "").toLowerCase();
-    if (result.match(/^(na|nan)$/)) return [sign * NaN, end, "NUMBER"];
-    if (result.match(/^(inf|infinity)$/)) return [sign * Infinity, end, "NUMBER"];
-    let number = Number(result);
-    if (Number.isNaN(number)) throw new ConfigError(`number ${formatRepr(result)} invalid`);
-    return [sign * number, end, "NUMBER"];
+    if (start !== "-" && start !== "+") raw = `${start}${raw}`;
+    if (raw.search(/[-/]/) > -1) return matchDate(raw, end);
+
+    raw = raw.replace(/_(\d{3})/g, "$1").replace(/ (\d{3})/g, "$1").toUpperCase();
+    if (raw.match(/^(NA|NAN|N\/A)$/)) return [sign * NaN, end, "ENTRY_VALUE"];
+    if (raw.match(/^(INF|INFINITY)$/)) return [sign * Infinity, end, "ENTRY_VALUE"];
+    let number = Number(raw);
+    if (Number.isNaN(number)) throw new ConfigError(`number ${formatRepr(raw)} invalid`);
+    return [sign * number, end, "ENTRY_VALUE"];
 }
 
 
@@ -259,70 +265,116 @@ function matchDate(raw, end) {
         dateObject = new Date(Date.UTC(year, month - 1, day, h, min, s, ms));
         dateObject.setTime(dateObject.getTime() - msOffset);
     }
-    return [dateObject, end, "DATE"];
+    return [dateObject, end, "ENTRY_VALUE"];
 }
 
 
 function matchKeyword(characters, start) {
-    let [result, end] = matchUntil(characters, DELIMITERS, true);
-    result = `${start}${result}`.trim().toLowerCase();
+    let [raw, end] = matchUntil(characters, DELIMITERS, {endOfInput: true, trim: true});
+    raw = `${start}${raw}`.trim().toUpperCase();
     let keyword = {
-        "true": true, "false": false, "null": null,
-        "inf": Infinity, "infinity": Infinity,
-        "na": NaN, "nan": NaN,
-    }[result];
-    if (keyword === undefined) throw new ConfigError(`keyword ${formatRepr(result)} invalid`);
-    return [keyword, end, "KEYWORD"];
+        "TRUE": true, "FALSE": false, "NULL": null,
+        "INF": Infinity, "INFINITY": Infinity,
+        "NA": NaN, "NAN": NaN, "N/A": NaN,
+    }[raw];
+    if (keyword !== undefined) return [keyword, end, "ENTRY_VALUE"];
+    throw new ConfigError(`keyword ${formatRepr(raw)} invalid`);
 }
 
 
-function matchArray(characters, start) {
+function matchArray(characters, delimiter) {
+    delimiter = {"[": "]", "(": ")"}[delimiter];
     let result = [];
-    let entry = [null, ",", null];
-    while (entry[1] === ",") {
-        entry = matchValue(characters, true);
-        if (!entry[1]) entry[1] = matchNext(characters);
-        if (entry[2] === "END_OF_ITERABLE") {
-            let delimiter = {"[": "]", "(": ")"}[start];
-            if (entry[1] !== delimiter) {
-                let info = `${formatRepr(delimiter)} expected but ${formatRepr(entry[1])} found`;
-                throw new ConfigError(`end of array delimiter ${info}`);
-            }
-        } else {
+    let start = "";
+    let allowed = ["ENTRY_VALUE", "END_OF_LIST", "END_OF_LINE"];
+    while (true) {
+        let entry = matchNext(characters, {allowed, start});
+        if (entry[2] === "ENTRY_VALUE") {
             result.push(entry[0]);
+            start = entry[1];
+            allowed = ["LIST_SEPARATOR", "END_OF_LIST", "END_OF_LINE"];
+        } else if (entry[2] === "LIST_SEPARATOR") {
+            start = "";
+            allowed = ["ENTRY_VALUE", "END_OF_LIST", "END_OF_LINE"];
+        } else {
+            if (entry[1] !== delimiter) {
+                let message = `end of array ${formatRepr(delimiter)} `;
+                message += `expected but ${formatRepr(entry[1])} reached`;
+                throw new ConfigError(message);
+            }
+            break;
         }
     }
-    return [result, "", "ARRAY"];
+    return [result, "", "ENTRY_VALUE"];
 }
 
 
 function matchMap(characters) {
     let result = new Map();
-    let entry = [null, ",", null];
-    while (entry[1] === ",") {
-        let entryKey = matchValue(characters, true, true);
-        if (!entryKey[1]) entryKey[1] = matchNext(characters, true);
-        if (entryKey[2] === "END_OF_ITERABLE") {
+    let start = "";
+    let allowed = ["ENTRY_KEY", "END_OF_LIST", "END_OF_LINE"];
+    while (true) {
+        let entryKey = matchNext(characters, {allowed, start, entryKey: "HIGHER_LEVEL"});
+        if (entryKey[2] === "LIST_SEPARATOR") {
+            start = "";
+            allowed = ["ENTRY_KEY", "END_OF_LIST", "END_OF_LINE"];
+            continue;
+        } else if (entryKey[2] === "END_OF_LIST") {
             if (entryKey[1] !== "}") {
-                let info = `${formatRepr("}")} expected but ${formatRepr(entryKey[1])} found`;
-                throw new ConfigError(`end of map delimiter ${info}`);
+                let message = `end of map ${formatRepr("}")} `;
+                message += `expected but ${formatRepr(entryKey[1])} reached`;
+                throw new ConfigError(message);
             }
             break;
         } else if (entryKey[1] !== "=") {
-            throw new ConfigError(`delimiter "=" missing`);
+            let message = `assignment character ${formatRepr("=")} `;
+            message += `expected but ${formatRepr(entryKey[1])} reached`;
+            throw new ConfigError(message);
         }
-        entry = matchValue(characters, true);
-        if (!entry[1]) entry[1] = matchNext(characters, true);
-        if (entry[2] === "END_OF_ITERABLE") {
-            if (entry[1] !== "}") {
-                let info = `${formatRepr("}")} expected but ${formatRepr(entryKey[1])} found`;
-                throw new ConfigError(`end of map delimiter ${info}`);
-            }
-        } else {
-            result.set(entryKey[0], entry[0]);
-        }
+        allowed = ["ENTRY_VALUE"];
+        let entryValue = matchNext(characters, {allowed});
+        start = entryValue[1];
+        result.set(entryKey[0], entryValue[0]);
+        allowed = ["LIST_SEPARATOR", "END_OF_LIST", "END_OF_LINE"];
     }
-    return [result, "", "MAP"];
+    return [result, "", "ENTRY_VALUE"];
+}
+
+
+function matchEntries(characters) {
+    let result = new Map();
+    let target = result;
+    let allowed = ["ENTRY_KEY", "END_OF_LINE", "END_OF_INPUT"];
+    while (true) {
+        let entryKey = matchNext(characters, {allowed, entryKey: "FIRST_LEVEL"});
+        if (entryKey[2] === "END_OF_INPUT") {
+            break
+        } else if (entryKey[1] === "]") {
+            target = new Map();
+            result.set(entryKey[0], target);
+            continue;
+        } else if (entryKey[1] !== "=") {
+            let message = `assignment character ${formatRepr("=")} `;
+            message += `expected but ${formatRepr(entryKey[1])} reached`;
+            throw new ConfigError(message);
+        }
+        allowed = ["ENTRY_VALUE"];
+        let entryValue;
+        try {
+            entryValue = matchNext(characters, {allowed});
+            if (entryValue[1] !== "\n") {
+                allowed = ["END_OF_LINE"];
+                matchNext(characters, {allowed, start: entryValue[1], newLine: true});
+            }
+        } catch (error) {
+            if (!(error instanceof ConfigError)) throw error;
+            let message = `${error.message} at entry ${formatRepr(entryKey[0])}`;
+            throw new ConfigError(message);
+        }
+        target.set(entryKey[0], entryValue[0]);
+        allowed = ["ENTRY_KEY", "END_OF_LINE", "END_OF_INPUT"];
+    }
+    return result;
 }
 
 
