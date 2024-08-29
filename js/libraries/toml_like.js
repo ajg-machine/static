@@ -502,7 +502,7 @@ function checkKey(key) {
     let invalid = key.search(/[^a-z0-9_-]/i);
     if (invalid > -1) {
         let message = `invalid character ${repr(key[invalid])} in key ${repr(key)} `
-        message += "(only letters, digits, _ and - expected)";
+        message += "(only letters, digits, _ and - allowed)";
         throw new ConfigError(message);
     }
     return key;
