@@ -135,22 +135,22 @@ function matchUntil(characters, delimiters, {endOfInput=false, trim=false}={}) {
 }
 
 
-function checkMatch(allowed, character, type, subType=null) {
-    if (allowed.includes(type)) return;
+function checkMatch(expected, character, type, subType=null) {
+    if (expected.includes(type)) return;
     let message = character === ""
         ? `${type} reached`
         : `character ${formatRepr(character)} (${type}) reached`;
-    throw new ConfigError(`${message} (${allowed.join(" ")} allowed)`);
+    throw new ConfigError(`${message} (${expected.join(" ")} expected)`);
 }
 
 
-function matchNext(characters, {allowed=[], entryKey, start, newLine}={}) {
+function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
     // KEY VALUE LIST_SEP LIST_END LINE_END INPUT_END
     start = start ? {value: start, done: false} : characters.next();
     while (!start.done) {
         start = start.value;
         if (start.match(/[\n#]/)) {
-            checkMatch(allowed, start, "LINE_END");
+            checkMatch(expected, start, "LINE_END");
             if (start.match(/[#]/)) {
                 matchUntil(characters, "\n", {endOfInput: true});
             }
@@ -161,35 +161,35 @@ function matchNext(characters, {allowed=[], entryKey, start, newLine}={}) {
             start = characters.next();
             continue;
         } else if (start.match(/[,]/)) {
-            checkMatch(allowed, start, "LIST_SEP");
+            checkMatch(expected, start, "LIST_SEP");
             return ["", start, "LIST_SEP"];
         } else if (start.match(/[\]\)\}]/)) {
-            checkMatch(allowed, start, "LIST_END");
+            checkMatch(expected, start, "LIST_END");
             return ["", start, "LIST_END"];
         } else if (entryKey) {
-            checkMatch(allowed, start, "KEY");
+            checkMatch(expected, start, "KEY");
             return matchEntryKey(characters, start, entryKey);
         } else if (start.match(/['"]/)) {
-            checkMatch(allowed, start, "VALUE", "string");
+            checkMatch(expected, start, "VALUE", "string");
             return matchString(characters, start);
         } else if (start.match(/[0-9.+-]/)) {
-            checkMatch(allowed, start, "VALUE", "number");
+            checkMatch(expected, start, "VALUE", "number");
             return matchNumber(characters, start);
         } else if (start.match(/[a-z_]/i)) {
-            checkMatch(allowed, start, "VALUE", "keyword");
+            checkMatch(expected, start, "VALUE", "keyword");
             return matchKeyword(characters, start);
         } else if (start.match(/[\[\(]/)) {
-            checkMatch(allowed, start, "VALUE", "array");
+            checkMatch(expected, start, "VALUE", "array");
             return matchArray(characters, start);
         } else if (start.match(/[\{]/)) {
-            checkMatch(allowed, start, "VALUE", "map");
+            checkMatch(expected, start, "VALUE", "map");
             return matchMap(characters);
         } else {
             let message = `invalid character ${formatRepr(start)} reached`;
-            throw new ConfigError(`${message} (${allowed.join(" ")} allowed)`);
+            throw new ConfigError(`${message} (${expected.join(" ")} expected)`);
         }
     }
-    checkMatch(allowed, "", "INPUT_END");
+    checkMatch(expected, "", "INPUT_END");
     return ["", "", "INPUT_END"];
 }
 
@@ -200,7 +200,7 @@ function matchEntryKey(characters, start, level) {
         if (level !== "FIRST_LEVEL") {
             let key = `${start}${match[0]}${match[1]}`;
             let message = `entry key ${formatRepr(key)} invalid `;
-            message += `([...] syntax for keys only allowed at first level)`;
+            message += `([...] syntax for keys only expected at first level)`;
             throw new ConfigError(message);
         }
         if (match[1] !== "]") {
@@ -285,16 +285,16 @@ function matchArray(characters, delimiter) {
     delimiter = {"[": "]", "(": ")"}[delimiter];
     let result = [];
     let start = "";
-    let allowed = ["VALUE", "LIST_END", "LINE_END"];
+    let expected = ["VALUE", "LIST_END", "LINE_END"];
     while (true) {
-        let entry = matchNext(characters, {allowed, start});
+        let entry = matchNext(characters, {expected, start});
         if (entry[2] === "VALUE") {
             result.push(entry[0]);
             start = entry[1];
-            allowed = ["LIST_SEP", "LIST_END", "LINE_END"];
+            expected = ["LIST_SEP", "LIST_END", "LINE_END"];
         } else if (entry[2] === "LIST_SEP") {
             start = "";
-            allowed = ["VALUE", "LIST_END", "LINE_END"];
+            expected = ["VALUE", "LIST_END", "LINE_END"];
         } else {
             if (entry[1] !== delimiter) {
                 let message = `end of array ${formatRepr(delimiter)} `;
@@ -311,12 +311,12 @@ function matchArray(characters, delimiter) {
 function matchMap(characters) {
     let result = new Map();
     let start = "";
-    let allowed = ["KEY", "LIST_END", "LINE_END"];
+    let expected = ["KEY", "LIST_END", "LINE_END"];
     while (true) {
-        let entryKey = matchNext(characters, {allowed, start, entryKey: "HIGHER_LEVEL"});
+        let entryKey = matchNext(characters, {expected, start, entryKey: "HIGHER_LEVEL"});
         if (entryKey[2] === "LIST_SEP") {
             start = "";
-            allowed = ["KEY", "LIST_END", "LINE_END"];
+            expected = ["KEY", "LIST_END", "LINE_END"];
             continue;
         } else if (entryKey[2] === "LIST_END") {
             if (entryKey[1] !== "}") {
@@ -330,11 +330,11 @@ function matchMap(characters) {
             message += `expected but ${formatRepr(entryKey[1])} reached`;
             throw new ConfigError(message);
         }
-        allowed = ["VALUE"];
-        let entryValue = matchNext(characters, {allowed});
+        expected = ["VALUE"];
+        let entryValue = matchNext(characters, {expected});
         start = entryValue[1];
         result.set(entryKey[0], entryValue[0]);
-        allowed = ["LIST_SEP", "LIST_END", "LINE_END"];
+        expected = ["LIST_SEP", "LIST_END", "LINE_END"];
     }
     return [result, "", "VALUE"];
 }
@@ -343,9 +343,9 @@ function matchMap(characters) {
 function matchEntries(characters) {
     let result = new Map();
     let target = result;
-    let allowed = ["KEY", "LINE_END", "INPUT_END"];
+    let expected = ["KEY", "LINE_END", "INPUT_END"];
     while (true) {
-        let entryKey = matchNext(characters, {allowed, entryKey: "FIRST_LEVEL"});
+        let entryKey = matchNext(characters, {expected, entryKey: "FIRST_LEVEL"});
         if (entryKey[2] === "INPUT_END") {
             break
         } else if (entryKey[1] === "]") {
@@ -357,13 +357,13 @@ function matchEntries(characters) {
             message += `expected but ${formatRepr(entryKey[1])} reached`;
             throw new ConfigError(message);
         }
-        allowed = ["VALUE"];
+        expected = ["VALUE"];
         let entryValue;
         try {
-            entryValue = matchNext(characters, {allowed});
+            entryValue = matchNext(characters, {expected});
             if (entryValue[1] !== "\n") {
-                allowed = ["LINE_END", "INPUT_END"];
-                matchNext(characters, {allowed, start: entryValue[1], newLine: true});
+                expected = ["LINE_END", "INPUT_END"];
+                matchNext(characters, {expected, start: entryValue[1], newLine: true});
             }
         } catch (error) {
             if (!(error instanceof ConfigError)) throw error;
@@ -371,7 +371,7 @@ function matchEntries(characters) {
             throw new ConfigError(message);
         }
         target.set(entryKey[0], entryValue[0]);
-        allowed = ["KEY", "LINE_END", "INPUT_END"];
+        expected = ["KEY", "LINE_END", "INPUT_END"];
     }
     return result;
 }
@@ -486,8 +486,8 @@ function checkKey(key) {
     }
     key = key.trim();
     if (key.search(/[^a-z0-9_-]/i) > -1) {
-        let allowed = "(only letters, digits, _ and - allowed)";
-        throw new ConfigError(`key ${formatRepr(key)} contains an invalid character ${allowed}`);
+        let expected = "(only letters, digits, _ and - expected)";
+        throw new ConfigError(`key ${formatRepr(key)} contains an invalid character ${expected}`);
     }
     return key;
 }
