@@ -64,7 +64,7 @@ function iterOverMap(input) {
     } else if (typeof input === "object" && !Array.isArray(input) && input !== null) {
         return Object.entries(input);
     } else {
-        throw new ConfigError(`input ${formatRepr(input)} has invalid type (map or js object expected)`);
+        throw new ConfigError(`input ${repr(input)} has invalid type (map or js object expected)`);
     }
 }
 
@@ -94,7 +94,7 @@ function isArrayLike(value) {
 }
 
 
-function formatRepr(value) {
+function repr(value, {maxLength=60}={}) {
     let type = typeof value;
     if (type === "object") type = value.constructor.name;
     let string = isString(value);
@@ -103,8 +103,8 @@ function formatRepr(value) {
         let regex = new RegExp(`\\${code}`, "g");
         value = value.replace(regex, `\\${code}`);
     }
-    let length = value.length;
-    if (length > 80) value = `${value.slice(0, 70)} [+${length - 70}]`;
+    let over = value.length - maxLength;
+    if (over > 0) value = `${value.slice(0, maxLength)} [+${over}]`;
     if (!string) value = `${value} [${type}]`;
     return value;
 }
@@ -129,8 +129,12 @@ function matchUntil(characters, delimiters, {endOfInput=false}={}) {
         }
         character = characters.next();
     }
-    if (!endOfInput) throw new ConfigError("unexpected end of input");
     result = result.join("");
+    if (!endOfInput) {
+        result = result.trim();
+        result = result ? ` (from ${repr(result, {maxLength: 20})})` : "";
+        throw new ConfigError(`unexpected end of input${result}`);
+    }
     return [result, ""];
 }
 
@@ -144,7 +148,7 @@ function checkMatch(expected, character, type) {
     type = type.replace(/_/g, " ").toLowerCase();
     let message = character === ""
         ? `${type} reached`
-        : `${type} ${formatRepr(character)} reached`;
+        : `${type} ${repr(character)} reached`;
     throw new ConfigError(`${message} but ${expected} expected`);
 }
 
@@ -203,15 +207,15 @@ function matchKey(characters, start, level) {
     if (start === "[") {
         if (level !== "FIRST_LEVEL") {
             let key = `${start}${match[0].trim()}${match[1]}`;
-            let message = `key ${formatRepr(key)} invalid `;
-            message += `(formatRepr(${"[...]"}) syntax only at first level)`;
+            let message = `key ${repr(key)} invalid `;
+            message += `(repr(${"[...]"}) syntax only at first level)`;
             throw new ConfigError(message);
         }
         if (match[1] !== "]") {
             let key = `${start}${match[0].trim()}${match[1]}`;
-            let message = `key ${formatRepr(key)} invalid `;
-            message += `(delimiter ${formatRepr(match[1])} `;
-            message += `reached before ${formatRepr("]")})`;
+            let message = `key ${repr(key)} invalid `;
+            message += `(delimiter ${repr(match[1])} `;
+            message += `reached before ${repr("]")})`;
             throw new ConfigError(message);
         }
     } else {
@@ -220,7 +224,7 @@ function matchKey(characters, start, level) {
     }
     if (!match[0]) {
         let key = `${start}${match[1]}`;
-        let message = `key ${formatRepr(key)} invalid (blank)`;
+        let message = `key ${repr(key)} invalid (blank)`;
         throw new ConfigError(message);
     }
     return [match[0], match[1], "KEY"];
@@ -242,7 +246,7 @@ function matchNumber(characters, start) {
     if (raw.match(/^(NA|NAN|N\/A)$/)) return [sign * NaN, end, "VALUE"];
     if (raw.match(/^(INF|INFINITY)$/)) return [sign * Infinity, end, "VALUE"];
     let number = Number(raw);
-    if (Number.isNaN(number)) throw new ConfigError(`number ${formatRepr(raw)} invalid`);
+    if (Number.isNaN(number)) throw new ConfigError(`number ${repr(raw)} invalid`);
     return [sign * number, end, "VALUE"];
 }
 
@@ -254,12 +258,12 @@ function matchDate(raw, end) {
     let pattern = `^${datePattern}((?:T| *)${timePatterm}?)? *${offsetPattern}?$`;
     let regex = new RegExp(pattern, "i");
     let match = raw.match(regex);
-    if (!match) throw new ConfigError(`date ${formatRepr(raw)} invalid`);
+    if (!match) throw new ConfigError(`date ${repr(raw)} invalid`);
     let [, date, , time, , fractional, offset] = match;
     let [year, month, day] = date.split(/[-/]/g).map(Number);
     let [h = 0, min = 0, s = 0] = (time || "00:00:00").split(":").map(Number);
     if (month > 12 || day > 31 || h > 24 || min > 60 || s > 60) {
-        throw new ConfigError(`date ${formatRepr(raw)} invalid`);
+        throw new ConfigError(`date ${repr(raw)} invalid`);
     }
     let ms = Number(`0${(fractional || ".0")}`) * 1000;
     let dateObject = new Date(year, month - 1, day, h, min, s, ms);
@@ -283,7 +287,7 @@ function matchKeyword(characters, start) {
         "NA": NaN, "NAN": NaN, "N/A": NaN,
     }[raw];
     if (keyword !== undefined) return [keyword, end, "VALUE"];
-    throw new ConfigError(`keyword ${formatRepr(raw)} invalid`);
+    throw new ConfigError(`keyword ${repr(raw)} invalid`);
 }
 
 
@@ -303,8 +307,8 @@ function matchArray(characters, delimiter) {
             expected = ["VALUE", "LIST_END", "LINE_END"];
         } else {
             if (entry[1] !== delimiter) {
-                let message = `end of array ${formatRepr(delimiter)} `;
-                message += `expected but ${formatRepr(entry[1])} reached`;
+                let message = `end of array ${repr(delimiter)} `;
+                message += `expected but ${repr(entry[1])} reached`;
                 throw new ConfigError(message);
             }
             break;
@@ -326,14 +330,14 @@ function matchMap(characters) {
             continue;
         } else if (entryKey[2] === "LIST_END") {
             if (entryKey[1] !== "}") {
-                let message = `end of map ${formatRepr("}")} `;
-                message += `expected but ${formatRepr(entryKey[1])} reached`;
+                let message = `end of map ${repr("}")} `;
+                message += `expected but ${repr(entryKey[1])} reached`;
                 throw new ConfigError(message);
             }
             break;
         } else if (entryKey[1] !== "=") {
-            let message = `assignment character ${formatRepr("=")} `;
-            message += `expected but ${formatRepr(entryKey[1])} reached`;
+            let message = `assignment character ${repr("=")} `;
+            message += `expected but ${repr(entryKey[1])} reached`;
             throw new ConfigError(message);
         }
         expected = ["VALUE"];
@@ -359,9 +363,9 @@ function matchEntries(characters) {
             result.set(entryKey[0], target);
             continue;
         } else if (entryKey[1] !== "=") {
-            let message = `assignment character ${formatRepr("=")} `;
-            message += `expected but ${formatRepr(entryKey[1])} reached `;
-            message += `at entry ${formatRepr(entryKey[0])}`;
+            let message = `assignment character ${repr("=")} `;
+            message += `expected but ${repr(entryKey[1])} reached `;
+            message += `at entry ${repr(entryKey[0])}`;
             throw new ConfigError(message);
         }
         expected = ["VALUE"];
@@ -374,7 +378,7 @@ function matchEntries(characters) {
             }
         } catch (error) {
             if (!(error instanceof ConfigError)) throw error;
-            let message = `${error.message} at entry ${formatRepr(entryKey[0])}`;
+            let message = `${error.message} at entry ${repr(entryKey[0])}`;
             throw new ConfigError(message);
         }
         target.set(entryKey[0], entryValue[0]);
@@ -396,7 +400,7 @@ function decode(input) {
         return accumulateStreamChunks(input.stream())
             .then(chunks => matchEntries(generateFromChunks(chunks)));
     } else {
-        throw new ConfigError(`type of input ${formatRepr(input)} unimplemented`);
+        throw new ConfigError(`type of input ${repr(input)} unimplemented`);
     }
 }
 
@@ -419,7 +423,7 @@ function encodeValue(input, references, level, levelUpIfNotMap=true) {
     } else if (input instanceof Map || typeof input === "object") {
         return ["MAP", encodeMap(input, references, level + 1)];
     } else {
-        throw new ConfigError(`type of input ${formatRepr(input)} unimplemented`);
+        throw new ConfigError(`type of input ${repr(input)} unimplemented`);
     }
 }
 
@@ -464,7 +468,7 @@ function encodeDate(input) {
 
 
 function encodeArray(input, references, level) {
-    if (references.has(input)) throw new ConfigError(`circular reference to ${formatRepr(input)}`);
+    if (references.has(input)) throw new ConfigError(`circular reference to ${repr(input)}`);
     references.add(input);
     let result = Array.from(input, entry => {
         return encodeValue(entry, references, level)[1];
@@ -489,19 +493,19 @@ function encodeArray(input, references, level) {
 
 function checkKey(key) {
     if (!isString(key)) {
-        throw new ConfigError(`type of key ${formatRepr(key)} invalid (string expected)`);
+        throw new ConfigError(`type of key ${repr(key)} invalid (string expected)`);
     }
     key = key.trim();
     if (key.search(/[^a-z0-9_-]/i) > -1) {
         let expected = "(only letters, digits, _ and - expected)";
-        throw new ConfigError(`invalid character in key ${formatRepr(key)} ${expected}`);
+        throw new ConfigError(`invalid character in key ${repr(key)} ${expected}`);
     }
     return key;
 }
 
 
 function encodeMap(input, references, level) {
-    if (references.has(input)) throw new ConfigError(`circular reference to ${formatRepr(input)}`);
+    if (references.has(input)) throw new ConfigError(`circular reference to ${repr(input)}`);
     references.add(input);
     let result;
     if (level <= 1) {
