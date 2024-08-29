@@ -242,9 +242,9 @@ function matchNumber(characters, start) {
     let sign = start === "-" ? -1 : 1;
     raw = `${start === "-" || start === "+" ? "" : start}${raw}`.trim();
     if (raw.search(/[-+:/utc]/i) > -1) return matchDate(raw, end);
-    raw = raw.replace(/_(\d{3})/g, "$1").replace(/ (\d{3})/g, "$1").toUpperCase();
-    if (raw.match(/^(NA|NAN|N\/A)$/)) return [sign * NaN, end, "VALUE"];
-    if (raw.match(/^(INF|INFINITY)$/)) return [sign * Infinity, end, "VALUE"];
+    raw = raw.replace(/_(\d{3})/g, "$1").replace(/ (\d{3})/g, "$1")
+    if (raw.match(/^(NA|NAN|N\/A)$/i)) return [sign * NaN, end, "VALUE"];
+    if (raw.match(/^(INF|INFINITY)$/i)) return [sign * Infinity, end, "VALUE"];
     let number = Number(raw);
     if (Number.isNaN(number)) throw new ConfigError(`number ${repr(raw)} invalid`);
     return [sign * number, end, "VALUE"];
@@ -280,12 +280,12 @@ function matchDate(raw, end) {
 
 function matchKeyword(characters, start) {
     let [raw, end] = matchUntil(characters, DELIMITERS, {endOfInput: true});
-    raw = `${start}${raw}`.trim().toUpperCase();
+    raw = `${start}${raw}`.trim();
     let keyword = {
         "TRUE": true, "FALSE": false, "NULL": null,
         "INF": Infinity, "INFINITY": Infinity,
         "NA": NaN, "NAN": NaN, "N/A": NaN,
-    }[raw];
+    }[raw.toUpperCase()];
     if (keyword !== undefined) return [keyword, end, "VALUE"];
     throw new ConfigError(`keyword ${repr(raw)} invalid`);
 }
