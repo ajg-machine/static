@@ -131,9 +131,10 @@ function matchUntil(characters, delimiters, {endOfInput=false}={}) {
     }
     result = result.join("");
     if (!endOfInput) {
-        result = result.trim();
-        result = result ? ` (from ${repr(result, {maxLength: 20})})` : "";
-        throw new ConfigError(`unexpected end of input${result}`);
+        let message = delimiters.length === 1
+            ? `delimiter ${repr(delimiters)} expected but end of input reached`
+            : `delimiter expected but end of input reached`;
+        throw new ConfigError(message);
     }
     return [result, ""];
 }
