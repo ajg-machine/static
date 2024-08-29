@@ -104,16 +104,16 @@ function repr(value, {maxLength=60}={}) {
         value = value.replace(regex, `\\${code}`);
     }
     let over = value.length - maxLength;
-    if (over > 0) value = `${value.slice(0, maxLength)} [+${over}]`;
+    if (over > 0) value = `${value.slice(0, maxLength)}… [+${over}]`;
     if (!string) value = `${value} [${type}]`;
     return value;
 }
 
 
-function matchUntil(characters, delimiters, {endOfInput=false}={}) {
+function matchUntil(characters, delimiters, {endOfInput=false, start}={}) {
     let result = [];
     let isEscaped = false;
-    let character = characters.next();
+    let character = start ? {value: start, done: false} : characters.next();
     while (!character.done) {
         character = character.value;
         if (isEscaped) {
@@ -140,18 +140,19 @@ function matchUntil(characters, delimiters, {endOfInput=false}={}) {
 }
 
 
-function checkMatch(expected, character, type) {
+function checkMatch(expected, characters, character, type) {
     if (expected.includes(type)) return;
     expected = expected.length > 1
         ? `${expected.slice(0, -1).join(", ")} or ${expected.slice(-1)[0]}`
         : `${expected}`;
     expected = expected.replace(/_/g, " ").toLowerCase();
     type = type.replace(/_/g, " ").toLowerCase();
+    let reached = matchUntil(characters, "#\n", {endOfInput: true, start: character})[0].trim();
     let message = type === "unknown"
-        ? `${repr(character)} reached`
-        : character === ""
+        ? `${repr(reached, {maxLength: 20})} reached`
+        : reached === ""
         ? `${type} reached`
-        : `${type} ${repr(character)} reached`;
+        : `${type} ${repr(reached, {maxLength: 20})} reached`;
     throw new ConfigError(`${expected} expected but ${message}`);
 }
 
@@ -162,7 +163,7 @@ function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
     while (!start.done) {
         start = start.value;
         if (start.match(/[\n#]/)) {
-            checkMatch(expected, start, "LINE_END");
+            checkMatch(expected, characters, start, "LINE_END");
             if (start.match(/[#]/)) {
                 matchUntil(characters, "\n", {endOfInput: true});
             }
@@ -173,34 +174,34 @@ function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
             start = characters.next();
             continue;
         } else if (start.match(/[,]/)) {
-            checkMatch(expected, start, "LIST_DIVIDER");
+            checkMatch(expected, characters, start, "LIST_DIVIDER");
             return ["", start, "LIST_DIVIDER"];
         } else if (start.match(/[\]\)\}]/)) {
-            checkMatch(expected, start, "LIST_END");
+            checkMatch(expected, characters, start, "LIST_END");
             return ["", start, "LIST_END"];
         } else if (entryKey) {
-            checkMatch(expected, start, "KEY");
+            checkMatch(expected, characters, start, "KEY");
             return matchKey(characters, start, entryKey);
         } else if (start.match(/['"]/)) {
-            checkMatch(expected, start, "VALUE");
+            checkMatch(expected, characters, start, "VALUE");
             return matchString(characters, start);
         } else if (start.match(/[0-9.+-]/)) {
-            checkMatch(expected, start, "VALUE");
+            checkMatch(expected, characters, start, "VALUE");
             return matchNumber(characters, start);
         } else if (start.match(/[a-z_]/i)) {
-            checkMatch(expected, start, "VALUE");
+            checkMatch(expected, characters, start, "VALUE");
             return matchKeyword(characters, start);
         } else if (start.match(/[\[\(]/)) {
-            checkMatch(expected, start, "VALUE");
+            checkMatch(expected, characters, start, "VALUE");
             return matchArray(characters, start);
         } else if (start.match(/[\{]/)) {
-            checkMatch(expected, start, "VALUE");
+            checkMatch(expected, characters, start, "VALUE");
             return matchMap(characters);
         } else {
-            checkMatch(expected, start, "UNKNOWN");
+            checkMatch(expected, characters, start, "UNKNOWN");
         }
     }
-    checkMatch(expected, "", "INPUT_END");
+    checkMatch(expected, characters, "", "INPUT_END");
     return ["", "", "INPUT_END"];
 }
 
@@ -216,9 +217,9 @@ function matchKey(characters, start, level) {
         }
         if (match[1] !== "]") {
             let key = `${start}${match[0].trim()}${match[1]}`;
+            let reached = matchUntil(characters, "#\n", {endOfInput: true, start: match[1]})[0].trim();
             let message = `key ${repr(key)} invalid `;
-            message += `(delimiter ${repr(match[1])} `;
-            message += `reached before ${repr("]")})`;
+            message += `(${repr("]")} expected but ${repr(reached, {maxLength: 20})} reached`;
             throw new ConfigError(message);
         }
     } else {
@@ -310,8 +311,9 @@ function matchArray(characters, delimiter) {
             expected = ["VALUE", "LIST_END", "LINE_END"];
         } else {
             if (entry[1] !== delimiter) {
+                let reached = matchUntil(characters, "#\n", {endOfInput: true, start: entry[1]})[0].trim();
                 let message = `end of array ${repr(delimiter)} `;
-                message += `expected but ${repr(entry[1])} reached`;
+                message += `expected but ${repr(reached, {maxLength: 20})} reached`;
                 throw new ConfigError(message);
             }
             break;
@@ -333,14 +335,16 @@ function matchMap(characters) {
             continue;
         } else if (entryKey[2] === "LIST_END") {
             if (entryKey[1] !== "}") {
+                let reached = matchUntil(characters, "#\n", {endOfInput: true, start: entryKey[1]})[0].trim();
                 let message = `end of map ${repr("}")} `;
-                message += `expected but ${repr(entryKey[1])} reached`;
+                message += `expected but ${repr(reached, {maxLength: 20})} reached`;
                 throw new ConfigError(message);
             }
             break;
         } else if (entryKey[1] !== "=") {
+            let reached = matchUntil(characters, "#\n", {endOfInput: true, start: entryKey[1]})[0].trim();
             let message = `assignment character ${repr("=")} `;
-            message += `expected but ${repr(entryKey[1])} reached`;
+            message += `expected but ${repr(reached, {maxLength: 20})} reached`;
             throw new ConfigError(message);
         }
         expected = ["VALUE"];
@@ -366,9 +370,10 @@ function matchEntries(characters) {
             result.set(entryKey[0], target);
             continue;
         } else if (entryKey[1] !== "=") {
+            let reached = matchUntil(characters, "#\n", {endOfInput: true, start: entryKey[1]})[0].trim();
             let message = `assignment character ${repr("=")} `;
-            message += `expected but ${repr(entryKey[1])} reached `;
-            message += `at entry ${repr(entryKey[0])}`;
+            message += `expected but ${repr(reached, {maxLength: 20})} reached `;
+            message += `at entry ${repr(entryKey[1])}`;
             throw new ConfigError(message);
         }
         expected = ["VALUE"];
