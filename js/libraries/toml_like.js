@@ -233,8 +233,7 @@ function matchNumber(characters, start) {
     let [raw, end] = matchUntil(characters, DELIMITERS, {endOfInput: true, trim: true});
     let sign = start === "-" ? -1 : 1;
     if (start !== "-" && start !== "+") raw = `${start}${raw}`;
-    if (raw.search(/[-/]/) > -1) return matchDate(raw, end);
-
+    if (raw.search(/[-+:/utc]/i) > -1) return matchDate(raw, end);
     raw = raw.replace(/_(\d{3})/g, "$1").replace(/ (\d{3})/g, "$1").toUpperCase();
     if (raw.match(/^(NA|NAN|N\/A)$/)) return [sign * NaN, end, "VALUE"];
     if (raw.match(/^(INF|INFINITY)$/)) return [sign * Infinity, end, "VALUE"];
