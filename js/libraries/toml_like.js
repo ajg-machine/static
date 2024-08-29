@@ -373,7 +373,7 @@ function matchEntries(characters) {
             let reached = matchUntil(characters, "#\n", {endOfInput: true, start: entryKey[1]})[0].trim();
             let message = `assignment character ${repr("=")} `;
             message += `expected but ${repr(reached, {maxLength: 20})} reached `;
-            message += `at entry ${repr(entryKey[1])}`;
+            message += `at entry ${repr(entryKey[0])}`;
             throw new ConfigError(message);
         }
         expected = ["VALUE"];
