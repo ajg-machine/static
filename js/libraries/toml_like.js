@@ -150,7 +150,7 @@ function checkMatch(expected, character, type) {
     let message = character === ""
         ? `${type} reached`
         : `${type} ${repr(character)} reached`;
-    throw new ConfigError(`${message} but ${expected} expected`);
+    throw new ConfigError(`${expected} expected but ${message}`);
 }
 
 
