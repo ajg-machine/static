@@ -363,7 +363,7 @@ function matchEntries(characters) {
         try {
             entryValue = matchNext(characters, {allowed});
             if (entryValue[1] !== "\n") {
-                allowed = ["END_OF_LINE"];
+                allowed = ["END_OF_LINE", "END_OF_INPUT"];
                 matchNext(characters, {allowed, start: entryValue[1], newLine: true});
             }
         } catch (error) {
