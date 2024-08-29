@@ -195,7 +195,7 @@ function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
             checkMatch(expected, start, "VALUE");
             return matchMap(characters);
         } else {
-            checkMatch(expected, start, "UNKNOWN");
+            checkMatch(expected, start, "INVALID_CHARACTER");
         }
     }
     checkMatch(expected, "", "INPUT_END");
