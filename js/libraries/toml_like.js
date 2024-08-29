@@ -497,9 +497,11 @@ function checkKey(key) {
         throw new ConfigError(`type of key ${repr(key)} invalid (string expected)`);
     }
     key = key.trim();
-    if (key.search(/[^a-z0-9_-]/i) > -1) {
-        let expected = "(only letters, digits, _ and - expected)";
-        throw new ConfigError(`invalid character in key ${repr(key)} ${expected}`);
+    let invalid = key.search(/[^a-z0-9_-]/i);
+    if (invalid > -1) {
+        let message = `invalid character ${repr(key[invalid])} in key ${repr(key)} `
+        message += "(only letters, digits, _ and - expected)";
+        throw new ConfigError(message);
     }
     return key;
 }
