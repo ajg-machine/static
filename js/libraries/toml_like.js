@@ -254,6 +254,9 @@ function matchDate(raw, end) {
     let [, date, , time, , fractional, offset] = match;
     let [year, month, day] = date.split(/[-/]/g).map(Number);
     let [h = 0, min = 0, s = 0] = (time || "00:00:00").split(":").map(Number);
+    if (month > 12 || day > 31 || h > 24 || min > 60 || s > 60) {
+        throw new ConfigError(`date ${formatRepr(raw)} invalid`);
+    }
     let ms = Number(`0${(fractional || ".0")}`) * 1000;
     let dateObject = new Date(year, month - 1, day, h, min, s, ms);
     if (offset) {
