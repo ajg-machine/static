@@ -94,13 +94,6 @@ function isArrayLike(value) {
 }
 
 
-function isMapLike(value) {
-    if (value instanceof Map) return true;
-    if (typeof value === "object") return true;
-    return false;
-}
-
-
 function repr(value, {maxLength=60}={}) {
     let type = typeof value;
     if (type === "object") type = value.constructor.name;
@@ -420,22 +413,34 @@ function decode(input) {
 }
 
 
+function getValueType(input) {
+    if (isString(input)) return "STRING";
+    if (isNumber(input)) return "NUMBER";
+    if (input instanceof Date) return "DATE";
+    if ([undefined, null, true, false].includes(input)) return "KEYWORD";
+    if (isArrayLike(input)) return "ARRAY";
+    if (input instanceof Map || typeof input === "object") return "MAP";
+    throw new ConfigError(`type of input ${repr(input)} unimplemented`);
+}
+
+
 function encodeValue(input, references, level, levelUpIfNotMap=true) {
-    if (isString(input)) {
+    let type = getValueType(input);
+    if (type === "STRING") {
         return ["STRING", encodeString(input)];
-    } else if (isNumber(input)) {
+    } else if (type === "NUMBER") {
         return ["NUMBER", encodeNumber(input)];
-    } else if (input instanceof Date) {
+    } else if (type === "DATE") {
         return ["DATE", encodeDate(input)];
-    } else if ([undefined, null, true, false].includes(input)) {
+    } else if (type === "KEYWORD") {
         if (input === undefined) input = null;
         return ["KEYWORD", [`${input}`.toUpperCase()]];
-    } else if (isArrayLike(input)) {
+    } else if (type === "ARRAY") {
         if (input instanceof DataView) input = new Uint8Array(input.buffer);
         if (input instanceof ArrayBuffer) input = new Uint8Array(input);
         level += levelUpIfNotMap ? 1 : 0;
         return ["ARRAY", encodeArray(input, references, level)];
-    } else if (isMapLike(input)) {
+    } else if (type === "MAP") {
         return ["MAP", encodeMap(input, references, level + 1)];
     } else {
         throw new ConfigError(`type of input ${repr(input)} unimplemented`);
@@ -528,7 +533,8 @@ function encodeMap(input, references, level) {
     if (level === 0) {
         let groupedInput = [[], []];
         for (let entry of iterOverMap(input)) {
-            groupedInput[isMapLike(entry[1]) ? 1 : 0].push(entry);
+            let valueType = getValueType(entry[1]);
+            groupedInput[valueType === "MAP" ? 1 : 0].push(entry);
         }
         result = Array.from(groupedInput.flat(), (entry, i) => {
             let [key, value] = entry;
