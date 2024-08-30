@@ -542,9 +542,9 @@ function encodeMap(input, references, level) {
             let valueType;
             [valueType, value] = encodeValue(value, references, level);
             if (level === 0 && valueType === "MAP") {
-                key = i ? `\n[${key}]\n` : `[${key}]\n`;
-                if (value.length) return [key, ...value, "\n"];
-                return [key];
+                key = i ? `\n[${key}]` : `[${key}]`;
+                if (value.length) return [key, "\n", ...value, "\n"];
+                return [key, "\n"];
             } else {
                 return [key, " = ", ...value, "\n"];
             }
