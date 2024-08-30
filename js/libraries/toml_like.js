@@ -104,7 +104,7 @@ function repr(value, {maxLength=60}={}) {
         value = value.replace(regex, `\\${code}`);
     }
     let over = value.length - maxLength;
-    if (over > 0) value = `${value.slice(0, maxLength)}… [+${over}]`;
+    if (over > 0) value = `${value.slice(0, maxLength)}… [+${over}]\u202F»`;
     if (!string) value = `${value} [${type}]`;
     return value;
 }
@@ -158,16 +158,16 @@ function checkMatch(expected, characters, character, type) {
 
 
 function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
-    // KEY VALUE LIST_DIVIDER LIST_END LINE_END INPUT_END
+    // KEY VALUE LIST_DIVIDER LIST_DELIMITER NEW_LINE END_OF_INPUT
     start = start ? {value: start, done: false} : characters.next();
     while (!start.done) {
         start = start.value;
         if (start.match(/[\n#]/)) {
-            checkMatch(expected, characters, start, "LINE_END");
+            checkMatch(expected, characters, start, "NEW_LINE");
             if (start.match(/[#]/)) {
                 matchUntil(characters, "\n", {endOfInput: true});
             }
-            if (newLine) return ["", "\n", "LINE_END"];
+            if (newLine) return ["", "\n", "NEW_LINE"];
             start = characters.next();
             continue;
         } else if (start.match(/\s/)) {
@@ -177,8 +177,8 @@ function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
             checkMatch(expected, characters, start, "LIST_DIVIDER");
             return ["", start, "LIST_DIVIDER"];
         } else if (start.match(/[\]\)\}]/)) {
-            checkMatch(expected, characters, start, "LIST_END");
-            return ["", start, "LIST_END"];
+            checkMatch(expected, characters, start, "LIST_DELIMITER");
+            return ["", start, "LIST_DELIMITER"];
         } else if (entryKey) {
             checkMatch(expected, characters, start, "KEY");
             return matchKey(characters, start, entryKey);
@@ -201,8 +201,8 @@ function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
             checkMatch(expected, characters, start, "UNKNOWN");
         }
     }
-    checkMatch(expected, characters, "", "INPUT_END");
-    return ["", "", "INPUT_END"];
+    checkMatch(expected, characters, "", "END_OF_INPUT");
+    return ["", "", "END_OF_INPUT"];
 }
 
 
@@ -299,16 +299,16 @@ function matchArray(characters, delimiter) {
     delimiter = {"[": "]", "(": ")"}[delimiter];
     let result = [];
     let start = "";
-    let expected = ["VALUE", "LIST_END", "LINE_END"];
+    let expected = ["VALUE", "LIST_DELIMITER", "NEW_LINE"];
     while (true) {
         let entry = matchNext(characters, {expected, start});
         if (entry[2] === "VALUE") {
             result.push(entry[0]);
             start = entry[1];
-            expected = ["LIST_DIVIDER", "LIST_END", "LINE_END"];
+            expected = ["LIST_DIVIDER", "LIST_DELIMITER", "NEW_LINE"];
         } else if (entry[2] === "LIST_DIVIDER") {
             start = "";
-            expected = ["VALUE", "LIST_END", "LINE_END"];
+            expected = ["VALUE", "LIST_DELIMITER", "NEW_LINE"];
         } else {
             if (entry[1] !== delimiter) {
                 let reached = matchUntil(characters, "#\n", {endOfInput: true, start: entry[1]})[0].trim();
@@ -326,14 +326,14 @@ function matchArray(characters, delimiter) {
 function matchMap(characters) {
     let result = new Map();
     let start = "";
-    let expected = ["KEY", "LIST_END", "LINE_END"];
+    let expected = ["KEY", "LIST_DELIMITER", "NEW_LINE"];
     while (true) {
         let entryKey = matchNext(characters, {expected, start, entryKey: "HIGHER_LEVEL"});
         if (entryKey[2] === "LIST_DIVIDER") {
             start = "";
-            expected = ["KEY", "LIST_END", "LINE_END"];
+            expected = ["KEY", "LIST_DELIMITER", "NEW_LINE"];
             continue;
-        } else if (entryKey[2] === "LIST_END") {
+        } else if (entryKey[2] === "LIST_DELIMITER") {
             if (entryKey[1] !== "}") {
                 let reached = matchUntil(characters, "#\n", {endOfInput: true, start: entryKey[1]})[0].trim();
                 let message = `end of map ${repr("}")} `;
@@ -351,7 +351,7 @@ function matchMap(characters) {
         let entryValue = matchNext(characters, {expected});
         start = entryValue[1];
         result.set(entryKey[0], entryValue[0]);
-        expected = ["LIST_DIVIDER", "LIST_END", "LINE_END"];
+        expected = ["LIST_DIVIDER", "LIST_DELIMITER", "NEW_LINE"];
     }
     return [result, "", "VALUE"];
 }
@@ -360,10 +360,10 @@ function matchMap(characters) {
 function matchEntries(characters) {
     let result = new Map();
     let target = result;
-    let expected = ["KEY", "LINE_END", "INPUT_END"];
+    let expected = ["KEY", "NEW_LINE", "END_OF_INPUT"];
     while (true) {
         let entryKey = matchNext(characters, {expected, entryKey: "FIRST_LEVEL"});
-        if (entryKey[2] === "INPUT_END") {
+        if (entryKey[2] === "END_OF_INPUT") {
             break
         } else if (entryKey[1] === "]") {
             target = new Map();
@@ -381,7 +381,7 @@ function matchEntries(characters) {
         try {
             entryValue = matchNext(characters, {expected});
             if (entryValue[1] !== "\n") {
-                expected = ["LINE_END", "INPUT_END"];
+                expected = ["NEW_LINE", "END_OF_INPUT"];
                 matchNext(characters, {expected, start: entryValue[1], newLine: true});
             }
         } catch (error) {
@@ -390,7 +390,7 @@ function matchEntries(characters) {
             throw new ConfigError(message);
         }
         target.set(entryKey[0], entryValue[0]);
-        expected = ["KEY", "LINE_END", "INPUT_END"];
+        expected = ["KEY", "NEW_LINE", "END_OF_INPUT"];
     }
     return result;
 }
