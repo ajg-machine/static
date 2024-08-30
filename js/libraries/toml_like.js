@@ -94,6 +94,13 @@ function isArrayLike(value) {
 }
 
 
+function isMapLike(value) {
+    if (value instanceof Map) return true;
+    if (typeof value === "object") return true;
+    return false;
+}
+
+
 function repr(value, {maxLength=60}={}) {
     let type = typeof value;
     if (type === "object") type = value.constructor.name;
@@ -428,7 +435,7 @@ function encodeValue(input, references, level, levelUpIfNotMap=true) {
         if (input instanceof ArrayBuffer) input = new Uint8Array(input);
         level += levelUpIfNotMap ? 1 : 0;
         return ["ARRAY", encodeArray(input, references, level)];
-    } else if (input instanceof Map || typeof input === "object") {
+    } else if (isMapLike(input)) {
         return ["MAP", encodeMap(input, references, level + 1)];
     } else {
         throw new ConfigError(`type of input ${repr(input)} unimplemented`);
@@ -518,12 +525,16 @@ function encodeMap(input, references, level) {
     if (references.has(input)) throw new ConfigError(`circular reference to ${repr(input)}`);
     references.add(input);
     let result;
-    if (level <= 1) {
-        result = Array.from(iterOverMap(input), (entry, i) => {
+    if (level === 0) {
+        let groupedInput = [[], []];
+        for (let entry of iterOverMap(input)) {
+            groupedInput[isMapLike(entry[1]) ? 1 : 0].push(entry);
+        }
+        result = Array.from(groupedInput.flat(), (entry, i) => {
             let [key, value] = entry;
             key = checkKey(key);
             let valueType;
-            [valueType, value] = encodeValue(value, references, level, level !== 1);
+            [valueType, value] = encodeValue(value, references, level);
             if (level === 0 && valueType === "MAP") {
                 key = i ? `\n[${key}]\n` : `[${key}]\n`;
                 if (value.length) return [key, ...value, "\n"];
@@ -531,6 +542,15 @@ function encodeMap(input, references, level) {
             } else {
                 return [key, " = ", ...value, "\n"];
             }
+        });
+        if (result.length) result[result.length - 1].pop();
+        result = result.flat();
+    } else if (level === 1) {
+        result = Array.from(iterOverMap(input), (entry, i) => {
+            let [key, value] = entry;
+            key = checkKey(key);
+            value = encodeValue(value, references, level, false)[1];
+            return [key, " = ", ...value, "\n"];
         });
         if (result.length) result[result.length - 1].pop();
         result = result.flat();
