@@ -16,6 +16,26 @@ class ConfigError extends Error {
 }
 
 
+function makeDataMap() {
+    let set = (map, key, value) => {
+        if (isString(key) && key.startsWith("$")) {
+            map.set(key.slice(1), value);
+        } else {
+            map[key] = value;
+        }
+        return true;
+    }
+    let get = (map, key) => {
+        if (isString(key) && key.startsWith("$")) {
+            return map.get(key.slice(1));
+        } else {
+            return map[key].bind(map);
+        }
+    }
+    return new Proxy(new Map(), {set, get});
+}
+
+
 function* generateFrom(value) {
     if (isString(value)) {
         yield* value;
@@ -324,7 +344,7 @@ function matchArray(characters, delimiter) {
 
 
 function matchMap(characters) {
-    let result = new Map();
+    let result = makeDataMap();
     let start = "";
     let expected = ["KEY", "LIST_DELIMITER", "NEW_LINE"];
     while (true) {
@@ -358,7 +378,7 @@ function matchMap(characters) {
 
 
 function matchEntries(characters) {
-    let result = new Map();
+    let result = makeDataMap();
     let target = result;
     let expected = ["KEY", "NEW_LINE", "END_OF_INPUT"];
     while (true) {
@@ -366,7 +386,7 @@ function matchEntries(characters) {
         if (entryKey[2] === "END_OF_INPUT") {
             break
         } else if (entryKey[1] === "]") {
-            target = new Map();
+            target = makeDataMap();
             result.set(entryKey[0], target);
             continue;
         } else if (entryKey[1] !== "=") {
