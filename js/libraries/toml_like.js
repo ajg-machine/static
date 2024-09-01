@@ -29,7 +29,11 @@ function makeDataMap() {
         if (isString(key) && key.startsWith("$")) {
             return map.get(key.slice(1));
         } else {
-            return map[key].bind(map);
+            let value = map[key];
+            if (typeof value === "function") {
+                return value.bind(map);
+            }
+            return value;
         }
     }
     return new Proxy(new Map(), {set, get});
