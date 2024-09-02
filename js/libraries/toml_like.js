@@ -16,7 +16,7 @@ class ConfigError extends Error {
 }
 
 
-function makeDataMap() {
+function makeDataMap({useExtendedMap=false}={}) {
     let set = (map, key, value) => {
         if (isString(key) && key.startsWith("$")) {
             map.set(key.slice(1), value);
@@ -36,6 +36,7 @@ function makeDataMap() {
             return value;
         }
     }
+    if (!useExtendedMap) return new Map();
     return new Proxy(new Map(), {set, get});
 }
 
@@ -181,7 +182,7 @@ function checkMatch(expected, characters, character, type) {
 }
 
 
-function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
+function matchNext(characters, {expected=[], entryKey, start, newLine, options}={}) {
     // KEY VALUE LIST_DIVIDER LIST_DELIMITER NEW_LINE END_OF_INPUT
     start = start ? {value: start, done: false} : characters.next();
     while (!start.done) {
@@ -217,10 +218,10 @@ function matchNext(characters, {expected=[], entryKey, start, newLine}={}) {
             return matchKeyword(characters, start);
         } else if (start.match(/[\[\(]/)) {
             checkMatch(expected, characters, start, "VALUE");
-            return matchArray(characters, start);
+            return matchArray(characters, start, options);
         } else if (start.match(/[\{]/)) {
             checkMatch(expected, characters, start, "VALUE");
-            return matchMap(characters);
+            return matchMap(characters, options);
         } else {
             checkMatch(expected, characters, start, "UNKNOWN");
         }
@@ -319,13 +320,13 @@ function matchKeyword(characters, start) {
 }
 
 
-function matchArray(characters, delimiter) {
+function matchArray(characters, delimiter, options) {
     delimiter = {"[": "]", "(": ")"}[delimiter];
     let result = [];
     let start = "";
     let expected = ["VALUE", "LIST_DELIMITER", "NEW_LINE"];
     while (true) {
-        let entry = matchNext(characters, {expected, start});
+        let entry = matchNext(characters, {expected, start, options});
         if (entry[2] === "VALUE") {
             result.push(entry[0]);
             start = entry[1];
@@ -347,12 +348,12 @@ function matchArray(characters, delimiter) {
 }
 
 
-function matchMap(characters) {
-    let result = makeDataMap();
+function matchMap(characters, options) {
+    let result = makeDataMap({useExtendedMap: options.useExtendedMap});
     let start = "";
     let expected = ["KEY", "LIST_DELIMITER", "NEW_LINE"];
     while (true) {
-        let entryKey = matchNext(characters, {expected, start, entryKey: "HIGHER_LEVEL"});
+        let entryKey = matchNext(characters, {expected, start, entryKey: "HIGHER_LEVEL", options});
         if (entryKey[2] === "LIST_DIVIDER") {
             start = "";
             expected = ["KEY", "LIST_DELIMITER", "NEW_LINE"];
@@ -372,7 +373,7 @@ function matchMap(characters) {
             throw new ConfigError(message);
         }
         expected = ["VALUE"];
-        let entryValue = matchNext(characters, {expected});
+        let entryValue = matchNext(characters, {expected, options});
         start = entryValue[1];
         result.set(entryKey[0], entryValue[0]);
         expected = ["LIST_DIVIDER", "LIST_DELIMITER", "NEW_LINE"];
@@ -381,16 +382,16 @@ function matchMap(characters) {
 }
 
 
-function matchEntries(characters) {
-    let result = makeDataMap();
+function matchEntries(characters, options) {
+    let result = makeDataMap({useExtendedMap: options.useExtendedMap});
     let target = result;
     let expected = ["KEY", "NEW_LINE", "END_OF_INPUT"];
     while (true) {
-        let entryKey = matchNext(characters, {expected, entryKey: "FIRST_LEVEL"});
+        let entryKey = matchNext(characters, {expected, entryKey: "FIRST_LEVEL", options});
         if (entryKey[2] === "END_OF_INPUT") {
             break
         } else if (entryKey[1] === "]") {
-            target = makeDataMap();
+            target = makeDataMap({useExtendedMap: options.useExtendedMap});
             result.set(entryKey[0], target);
             continue;
         } else if (entryKey[1] !== "=") {
@@ -403,10 +404,10 @@ function matchEntries(characters) {
         expected = ["VALUE"];
         let entryValue;
         try {
-            entryValue = matchNext(characters, {expected});
+            entryValue = matchNext(characters, {expected, options});
             if (entryValue[1] !== "\n") {
                 expected = ["NEW_LINE", "END_OF_INPUT"];
-                matchNext(characters, {expected, start: entryValue[1], newLine: true});
+                matchNext(characters, {expected, start: entryValue[1], newLine: true, options});
             }
         } catch (error) {
             if (!(error instanceof ConfigError)) throw error;
@@ -420,17 +421,18 @@ function matchEntries(characters) {
 }
 
 
-function decode(input) {
+function decode(input, {useExtendedMap=false}={}) {
+    let options = {useExtendedMap};
     if (isString(input)) {
-        return matchEntries(generateFrom(input));
+        return matchEntries(generateFrom(input), options);
     } else if (input != null && typeof input[Symbol.iterator] === "function") {
-        return matchEntries(generateFromChunks(input));
+        return matchEntries(generateFromChunks(input), options);
     } else if (input instanceof ReadableStream) {
         return accumulateStreamChunks(input)
-            .then(chunks => matchEntries(generateFromChunks(chunks)));
+            .then(chunks => matchEntries(generateFromChunks(chunks)), options);
     } else if (input instanceof Blob) {
         return accumulateStreamChunks(input.stream())
-            .then(chunks => matchEntries(generateFromChunks(chunks)));
+            .then(chunks => matchEntries(generateFromChunks(chunks)), options);
     } else {
         throw new ConfigError(`type of input ${repr(input)} unimplemented`);
     }
@@ -448,7 +450,7 @@ function getValueType(input) {
 }
 
 
-function encodeValue(input, references, level, levelUpIfNotMap=true) {
+function encodeValue(input, options, references, level, levelUpIfNotMap=true) {
     let type = getValueType(input);
     if (type === "STRING") {
         return ["STRING", encodeString(input)];
@@ -463,9 +465,9 @@ function encodeValue(input, references, level, levelUpIfNotMap=true) {
         if (input instanceof DataView) input = new Uint8Array(input.buffer);
         if (input instanceof ArrayBuffer) input = new Uint8Array(input);
         level += levelUpIfNotMap ? 1 : 0;
-        return ["ARRAY", encodeArray(input, references, level)];
+        return ["ARRAY", encodeArray(input, options, references, level)];
     } else if (type === "MAP") {
-        return ["MAP", encodeMap(input, references, level + 1)];
+        return ["MAP", encodeMap(input, options, references, level + 1)];
     } else {
         throw new ConfigError(`type of input ${repr(input)} unimplemented`);
     }
@@ -511,11 +513,11 @@ function encodeDate(input) {
 }
 
 
-function encodeArray(input, references, level) {
+function encodeArray(input, options, references, level) {
     if (references.has(input)) throw new ConfigError(`circular reference to ${repr(input)}`);
     references.add(input);
     let result = Array.from(input, entry => {
-        return encodeValue(entry, references, level)[1];
+        return encodeValue(entry, options, references, level)[1];
     });
     let length = result.reduce((sum, entry) => {
         return sum + entry.reduce((sum, x) => sum + x.length, 0) + 2;
@@ -550,7 +552,7 @@ function checkKey(key) {
 }
 
 
-function encodeMap(input, references, level) {
+function encodeMap(input, options, references, level) {
     if (references.has(input)) throw new ConfigError(`circular reference to ${repr(input)}`);
     references.add(input);
     let result;
@@ -564,7 +566,7 @@ function encodeMap(input, references, level) {
             let [key, value] = entry;
             key = checkKey(key);
             let valueType;
-            [valueType, value] = encodeValue(value, references, level);
+            [valueType, value] = encodeValue(value, options, references, level);
             if (level === 0 && valueType === "MAP") {
                 key = i ? `\n[${key}]` : `[${key}]`;
                 if (value.length) return [key, "\n", ...value, "\n"];
@@ -579,7 +581,7 @@ function encodeMap(input, references, level) {
         result = Array.from(iterOverMap(input), (entry, i) => {
             let [key, value] = entry;
             key = checkKey(key);
-            value = encodeValue(value, references, level, false)[1];
+            value = encodeValue(value, options, references, level, false)[1];
             return [key, " = ", ...value, "\n"];
         });
         if (result.length) result[result.length - 1].pop();
@@ -588,7 +590,7 @@ function encodeMap(input, references, level) {
         result = Array.from(iterOverMap(input), entry => {
             let [key, value] = entry;
             key = checkKey(key);
-            value = encodeValue(value, references, level)[1];
+            value = encodeValue(value, options, references, level)[1];
             return [key, value];
         });
         let length = result.reduce((sum, entry) => {
@@ -612,6 +614,7 @@ function encodeMap(input, references, level) {
 }
 
 
-function encode(input) {
-    return encodeMap(input, new WeakSet(), 0).join("");
+function encode(input, {}={}) {
+    let options = {};
+    return encodeMap(input, options, new WeakSet(), 0).join("");
 }
