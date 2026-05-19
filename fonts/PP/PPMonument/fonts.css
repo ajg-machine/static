@@ -1,0 +1,473 @@
+/* ==========================================================================
+   1. FONT FAMILY: PP Monument Normal
+   ========================================================================== */
+
+/* Thin */
+@font-face {
+    font-family: 'PP Monument Normal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNormal-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thin Italic */
+@font-face {
+    font-family: 'PP Monument Normal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNormal-ThinItalic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'PP Monument Normal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNormal-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light Italic */
+@font-face {
+    font-family: 'PP Monument Normal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNormal-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'PP Monument Normal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNormal-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'PP Monument Normal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNormal-RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'PP Monument Normal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNormal-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'PP Monument Normal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNormal-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'PP Monument Normal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNormal-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black Italic */
+@font-face {
+    font-family: 'PP Monument Normal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNormal-BlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   2. FONT FAMILY: PP Monument Condensed
+   ========================================================================== */
+
+/* Thin */
+@font-face {
+    font-family: 'PP Monument Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentCondensed-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thin Italic */
+@font-face {
+    font-family: 'PP Monument Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentCondensed-ThinItalic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'PP Monument Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentCondensed-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light Italic */
+@font-face {
+    font-family: 'PP Monument Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentCondensed-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'PP Monument Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentCondensed-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'PP Monument Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentCondensed-RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'PP Monument Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentCondensed-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'PP Monument Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentCondensed-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'PP Monument Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentCondensed-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black Italic */
+@font-face {
+    font-family: 'PP Monument Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentCondensed-BlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   3. FONT FAMILY: PP Monument Narrow
+   ========================================================================== */
+
+/* Thin */
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNarrow-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thin Italic */
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNarrow-ThinItalic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNarrow-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light Italic */
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNarrow-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNarrow-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNarrow-RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNarrow-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNarrow-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNarrow-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black Italic */
+@font-face {
+    font-family: 'PP Monument Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentNarrow-BlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   4. FONT FAMILY: PP Monument Extended
+   ========================================================================== */
+
+/* Thin */
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentExtended-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thin Italic */
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentExtended-ThinItalic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentExtended-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light Italic */
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentExtended-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentExtended-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentExtended-RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentExtended-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentExtended-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentExtended-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black Italic */
+@font-face {
+    font-family: 'PP Monument Extended';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentExtended-BlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   5. FONT FAMILY: PP Monument Wide
+   ========================================================================== */
+
+/* Thin */
+@font-face {
+    font-family: 'PP Monument Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentWide-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thin Italic */
+@font-face {
+    font-family: 'PP Monument Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentWide-ThinItalic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'PP Monument Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentWide-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light Italic */
+@font-face {
+    font-family: 'PP Monument Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentWide-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'PP Monument Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentWide-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'PP Monument Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentWide-RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'PP Monument Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentWide-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'PP Monument Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentWide-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'PP Monument Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentWide-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black Italic */
+@font-face {
+    font-family: 'PP Monument Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMonument/PPMonumentWide-BlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
