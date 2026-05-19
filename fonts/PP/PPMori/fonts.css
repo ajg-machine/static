@@ -1,0 +1,129 @@
+/* ==========================================================================
+   FONT FAMILY: PP Mori (Standard Variant)
+   ========================================================================== */
+
+/* Thin */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thin Italic */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-ThinItalic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Extralight */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-Extralight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Extralight Italic */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-ExtralightItalic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Book */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-Book.woff2') format('woff2');
+    font-weight: 375;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Book Italic */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-BookItalic.woff2') format('woff2');
+    font-weight: 375;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Semibold */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Semibold Italic */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-SemiboldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Extrabold */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-Extrabold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Extrabold Italic */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-ExtraboldItalic.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black Italic */
+@font-face {
+    font-family: 'PP Mori';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPMori/PPMori-BlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
