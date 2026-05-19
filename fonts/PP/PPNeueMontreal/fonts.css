@@ -1,0 +1,206 @@
+/* ==========================================================================
+   FONT FAMILY: PP Neue Montreal (Display / Standard)
+   ========================================================================== */
+
+/* Hairline */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Hairline.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Hairline Italic */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-HairlineItalic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light Italic */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Book (Alternative Regular) */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Book.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Book Italic */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-BookItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium Italic */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Semibold */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Semibold Italic */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-SemiboldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Extrabold */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Extrabold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Extrabold Italic */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-ExtraboldItalic.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black Italic */
+@font-face {
+    font-family: 'PP Neue Montreal';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-BlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   FONT FAMILY: PP Neue Montreal Text (Optimized for body paragraphs)
+   ========================================================================== */
+
+/* Text Light */
+@font-face {
+    font-family: 'PP Neue Montreal Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealText-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Text Light Italic */
+@font-face {
+    font-family: 'PP Neue Montreal Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealText-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Text Book (Regular Equivalent) */
+@font-face {
+    font-family: 'PP Neue Montreal Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealText-Book.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Text Book Italic */
+@font-face {
+    font-family: 'PP Neue Montreal Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealText-BookItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Text Bold */
+@font-face {
+    font-family: 'PP Neue Montreal Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealText-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Text Bold Italic */
+@font-face {
+    font-family: 'PP Neue Montreal Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealText-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
