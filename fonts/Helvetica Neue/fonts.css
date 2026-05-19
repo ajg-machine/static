@@ -1,0 +1,147 @@
+/* ==========================================================================
+   FONT FAMILY: Helvetica Neue
+   ========================================================================== */
+
+/* UltraLight (100) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue UltraLight.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* UltraLight Italic (100 Italic) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue UltraLight Italic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Thin (200) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Thin.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thin Italic (200 Italic) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Thin Italic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light (300) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light Italic (300 Italic) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Light Italic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Roman (Regular / 400) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Roman.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic (400 Italic) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Medium (500) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium Italic (500 Italic) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Medium Italic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold (700) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic (700 Italic) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Bold Italic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Heavy (800) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Heavy.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Heavy Italic (800 Italic) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Heavy Italic.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black (950) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Black.woff2') format('woff2');
+    font-weight: 950;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black Italic (950 Italic) */
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Neue/Helvetica Neue Black Italic.woff2') format('woff2');
+    font-weight: 950;
+    font-style: italic;
+    font-display: swap;
+}
