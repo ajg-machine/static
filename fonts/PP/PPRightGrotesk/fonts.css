@@ -1,0 +1,395 @@
+/* ==========================================================================
+   1. FONT FAMILY: PP Right Grotesk (Standard / Normal Width)
+   ========================================================================== */
+
+/* Light */
+@font-face {
+    font-family: 'PP Right Grotesk';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'PP Right Grotesk';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium Italic */
+@font-face {
+    font-family: 'PP Right Grotesk';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'PP Right Grotesk';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'PP Right Grotesk';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   2. FONT FAMILY: PP Right Grotesk Text (Optimized Standard Body)
+   ========================================================================== */
+
+/* Regular */
+@font-face {
+    font-family: 'PP Right Grotesk Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'PP Right Grotesk Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   3. FONT FAMILY: PP Right Grotesk Compact
+   ========================================================================== */
+
+/* Compact Fine Italic (Thin equivalent) */
+@font-face {
+    font-family: 'PP Right Grotesk Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-CompactFineItalic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Compact Regular */
+@font-face {
+    font-family: 'PP Right Grotesk Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-CompactRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compact Regular Italic */
+@font-face {
+    font-family: 'PP Right Grotesk Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-CompactRegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Compact Dark (Semibold/Bold equivalent) */
+@font-face {
+    font-family: 'PP Right Grotesk Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-CompactDark.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compact Black */
+@font-face {
+    font-family: 'PP Right Grotesk Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-CompactBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   4. FONT FAMILY: PP Right Grotesk Text Compact
+   ========================================================================== */
+
+/* Text Compact Light */
+@font-face {
+    font-family: 'PP Right Grotesk Text Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-CompactLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Text Compact Light Italic */
+@font-face {
+    font-family: 'PP Right Grotesk Text Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-CompactLightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Text Compact Medium */
+@font-face {
+    font-family: 'PP Right Grotesk Text Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-CompactMedium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Text Compact Medium Italic */
+@font-face {
+    font-family: 'PP Right Grotesk Text Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-CompactMediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   5. FONT FAMILY: PP Right Grotesk Spatial
+   ========================================================================== */
+
+/* Spatial Fine (Thin equivalent) */
+@font-face {
+    font-family: 'PP Right Grotesk Spatial';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-SpatialFine.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Spatial Regular */
+@font-face {
+    font-family: 'PP Right Grotesk Spatial';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-SpatialRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Spatial Regular Italic */
+@font-face {
+    font-family: 'PP Right Grotesk Spatial';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-SpatialRegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Spatial Black */
+@font-face {
+    font-family: 'PP Right Grotesk Spatial';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-SpatialBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Spatial Black Italic */
+@font-face {
+    font-family: 'PP Right Grotesk Spatial';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-SpatialBlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   6. FONT FAMILY: PP Right Grotesk Text Spatial
+   ========================================================================== */
+
+/* Text Spatial Light */
+@font-face {
+    font-family: 'PP Right Grotesk Text Spatial';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-SpatialLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Text Spatial Light Italic */
+@font-face {
+    font-family: 'PP Right Grotesk Text Spatial';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-SpatialLightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Text Spatial Bold */
+@font-face {
+    font-family: 'PP Right Grotesk Text Spatial';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-SpatialBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Text Spatial Bold Italic */
+@font-face {
+    font-family: 'PP Right Grotesk Text Spatial';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-SpatialBoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   7. FONT FAMILY: PP Right Grotesk Narrow
+   ========================================================================== */
+
+/* Narrow Light */
+@font-face {
+    font-family: 'PP Right Grotesk Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-NarrowLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Narrow Medium */
+@font-face {
+    font-family: 'PP Right Grotesk Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-NarrowMedium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   8. FONT FAMILY: PP Right Grotesk Tall
+   ========================================================================== */
+
+/* Tall Fine (Thin equivalent) */
+@font-face {
+    font-family: 'PP Right Grotesk Tall';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-TallFine.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Tall Regular */
+@font-face {
+    font-family: 'PP Right Grotesk Tall';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-TallRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Tall Black */
+@font-face {
+    font-family: 'PP Right Grotesk Tall';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-TallBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Tall Black Italic */
+@font-face {
+    font-family: 'PP Right Grotesk Tall';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-TallBlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   9. FONT FAMILY: PP Right Grotesk Tight
+   ========================================================================== */
+
+/* Tight Medium */
+@font-face {
+    font-family: 'PP Right Grotesk Tight';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-TightMedium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   10. FONT FAMILY: PP Right Grotesk Wide
+   ========================================================================== */
+
+/* Wide Fine (Thin equivalent) */
+@font-face {
+    font-family: 'PP Right Grotesk Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-WideFine.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Wide Medium */
+@font-face {
+    font-family: 'PP Right Grotesk Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-WideMedium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Wide Medium Italic */
+@font-face {
+    font-family: 'PP Right Grotesk Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-WideMediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Wide Black */
+@font-face {
+    font-family: 'PP Right Grotesk Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGrotesk-WideBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   11. FONT FAMILY: PP Right Grotesk Text Wide
+   ========================================================================== */
+
+/* Text Wide Bold */
+@font-face {
+    font-family: 'PP Right Grotesk Text Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-WideBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Text Wide Bold Italic */
+@font-face {
+    font-family: 'PP Right Grotesk Text Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPRightGrotesk/PPRightGroteskText-WideBoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
