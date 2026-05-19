@@ -1,0 +1,663 @@
+/* ==========================================================================
+   1. FONT FAMILY: PP Neue Gstaad (Standard Width)
+   ========================================================================== */
+
+/* Extralight */
+@font-face {
+    font-family: 'PP Neue Gstaad';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-Extralight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Extralight Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-ExtralightItalic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'PP Neue Gstaad';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'PP Neue Gstaad';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'PP Neue Gstaad';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'PP Neue Gstaad';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Black Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-BlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   2. FONT FAMILY: PP Neue Gstaad Compact
+   ========================================================================== */
+
+/* Compact Extralight */
+@font-face {
+    font-family: 'PP Neue Gstaad Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompactExtralight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compact Extralight Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompactExtralightItalic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Compact Light */
+@font-face {
+    font-family: 'PP Neue Gstaad Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompactLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compact Light Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompactLightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Compact Regular */
+@font-face {
+    font-family: 'PP Neue Gstaad Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompactRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compact Regular Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompactRegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Compact Bold */
+@font-face {
+    font-family: 'PP Neue Gstaad Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompactBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compact Bold Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompactBoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Compact Black */
+@font-face {
+    font-family: 'PP Neue Gstaad Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompactBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compact Black Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Compact';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompactBlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   3. FONT FAMILY: PP Neue Gstaad Compressed
+   ========================================================================== */
+
+/* Compressed Extralight */
+@font-face {
+    font-family: 'PP Neue Gstaad Compressed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompressedExtralight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compressed Extralight Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Compressed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompressedExtralightItalic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Compressed Light */
+@font-face {
+    font-family: 'PP Neue Gstaad Compressed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompressedLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compressed Light Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Compressed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompressedLightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Compressed Regular */
+@font-face {
+    font-family: 'PP Neue Gstaad Compressed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompressedRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compressed Regular Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Compressed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompressedRegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Compressed Bold */
+@font-face {
+    font-family: 'PP Neue Gstaad Compressed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompressedBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compressed Bold Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Compressed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompressedBoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Compressed Black */
+@font-face {
+    font-family: 'PP Neue Gstaad Compressed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompressedBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Compressed Black Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Compressed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CompressedBlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   4. FONT FAMILY: PP Neue Gstaad Condensed
+   ========================================================================== */
+
+/* Condensed Extralight */
+@font-face {
+    font-family: 'PP Neue Gstaad Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CondensedExtralight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Condensed Extralight Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CondensedExtralightItalic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Condensed Light */
+@font-face {
+    font-family: 'PP Neue Gstaad Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CondensedLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Condensed Light Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CondensedLightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Condensed Regular */
+@font-face {
+    font-family: 'PP Neue Gstaad Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CondensedRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Condensed Regular Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CondensedRegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Condensed Bold */
+@font-face {
+    font-family: 'PP Neue Gstaad Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CondensedBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Condensed Bold Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CondensedBoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Condensed Black */
+@font-face {
+    font-family: 'PP Neue Gstaad Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CondensedBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Condensed Black Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Condensed';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-CondensedBlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   5. FONT FAMILY: PP Neue Gstaad Expanded
+   ========================================================================== */
+
+/* Expanded Extralight */
+@font-face {
+    font-family: 'PP Neue Gstaad Expanded';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-ExpandedExtralight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Expanded Extralight Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Expanded';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-ExpandedExtralightItalic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Expanded Light */
+@font-face {
+    font-family: 'PP Neue Gstaad Expanded';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-ExpandedLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Expanded Light Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Expanded';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-ExpandedLightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Expanded Regular */
+@font-face {
+    font-family: 'PP Neue Gstaad Expanded';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-ExpandedRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Expanded Regular Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Expanded';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-ExpandedRegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Expanded Bold */
+@font-face {
+    font-family: 'PP Neue Gstaad Expanded';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-ExpandedBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Expanded Bold Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Expanded';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-ExpandedBoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Expanded Black */
+@font-face {
+    font-family: 'PP Neue Gstaad Expanded';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-ExpandedBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Expanded Black Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Expanded';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-ExpandedBlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   6. FONT FAMILY: PP Neue Gstaad Narrow
+   ========================================================================== */
+
+/* Narrow Extralight */
+@font-face {
+    font-family: 'PP Neue Gstaad Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-NarrowExtralight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Narrow Extralight Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-NarrowExtralightItalic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Narrow Light */
+@font-face {
+    font-family: 'PP Neue Gstaad Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-NarrowLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Narrow Light Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-NarrowLightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Narrow Regular */
+@font-face {
+    font-family: 'PP Neue Gstaad Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-NarrowRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Narrow Regular Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-NarrowRegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Narrow Bold */
+@font-face {
+    font-family: 'PP Neue Gstaad Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-NarrowBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Narrow Bold Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-NarrowBoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Narrow Black */
+@font-face {
+    font-family: 'PP Neue Gstaad Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-NarrowBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Narrow Black Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Narrow';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-NarrowBlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   7. FONT FAMILY: PP Neue Gstaad Wide
+   ========================================================================== */
+
+/* Wide Extralight */
+@font-face {
+    font-family: 'PP Neue Gstaad Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-WideExtralight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Wide Extralight Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-WideExtralightItalic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Wide Light */
+@font-face {
+    font-family: 'PP Neue Gstaad Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-WideLight.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Wide Light Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-WideLightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Wide Regular */
+@font-face {
+    font-family: 'PP Neue Gstaad Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-WideRegular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Wide Regular Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-WideRegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Wide Bold */
+@font-face {
+    font-family: 'PP Neue Gstaad Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-WideBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Wide Bold Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-WideBoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Wide Black */
+@font-face {
+    font-family: 'PP Neue Gstaad Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-WideBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Wide Black Italic */
+@font-face {
+    font-family: 'PP Neue Gstaad Wide';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueGstaad/PPNeueGstaad-WideBlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
