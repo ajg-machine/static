@@ -1,1 +1,84 @@
+/* ==========================================================================
+   FONT FAMILY: PP Neue Montreal Mono (Monospace Variant)
+   ========================================================================== */
 
+/* Thin */
+@font-face {
+    font-family: 'PP Neue Montreal Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealMono-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Thin Italic */
+@font-face {
+    font-family: 'PP Neue Montreal Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealMono-ThinItalic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'PP Neue Montreal Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealMono-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Book (Alternative Regular / 400) */
+@font-face {
+    font-family: 'PP Neue Montreal Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealMono-Book.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'PP Neue Montreal Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealMono-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'PP Neue Montreal Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealMono-RegularItalic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'PP Neue Montreal Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealMono-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'PP Neue Montreal Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealMono-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+    font-family: 'PP Neue Montreal Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealMono-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
