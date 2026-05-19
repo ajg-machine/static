@@ -4,7 +4,7 @@
 
 /* Upright / Roman Variable Axes */
 @font-face {
-    font-family: 'Helvetica Now Variable';
+    font-family: 'Helvetica Now';
     src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Now/Helvetica Now.woff2') format('woff2-variations'),
          url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Now/Helvetica Now.woff2') format('woff2');
     font-weight: 50 1000;
@@ -15,7 +15,7 @@
 
 /* Italic Variable Axes */
 @font-face {
-    font-family: 'Helvetica Now Variable';
+    font-family: 'Helvetica Now';
     src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Now/Helvetica Now Italic.woff2') format('woff2-variations'),
          url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Now/Helvetica Now Italic.woff2') format('woff2');
     font-weight: 50 1000;
