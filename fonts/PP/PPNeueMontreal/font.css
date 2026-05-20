@@ -42,7 +42,7 @@
 @font-face {
     font-family: 'PP Neue Montreal';
     src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Book.woff2') format('woff2');
-    font-weight: 400;
+    font-weight: 375;
     font-style: normal;
     font-display: swap;
 }
@@ -51,7 +51,7 @@
 @font-face {
     font-family: 'PP Neue Montreal';
     src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-BookItalic.woff2') format('woff2');
-    font-weight: 400;
+    font-weight: 375;
     font-style: italic;
     font-display: swap;
 }
@@ -60,7 +60,7 @@
 @font-face {
     font-family: 'PP Neue Montreal';
     src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Regular.woff2') format('woff2');
-    font-weight: 450;
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -69,7 +69,7 @@
 @font-face {
     font-family: 'PP Neue Montreal';
     src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontreal-Italic.woff2') format('woff2');
-    font-weight: 450;
+    font-weight: 400;
     font-style: italic;
     font-display: swap;
 }
