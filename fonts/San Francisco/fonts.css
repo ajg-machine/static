@@ -1,0 +1,349 @@
+/* ==========================================================================
+   1. FONT FAMILY: San Francisco Display (Headings & Large UI)
+   ========================================================================== */
+
+/* Ultralight */
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Ultralight.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Ultralight Italic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Thin */
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Thin.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Thin Italic.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Light Italic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Regular Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Medium Italic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Semibold */
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Semibold Italic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Bold Italic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Heavy */
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Heavy.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Heavy Italic.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Display Black Italic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   2. FONT FAMILY: San Francisco Text (Body Copy & Captions)
+   ========================================================================== */
+
+/* Light */
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Light Italic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Regular Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Medium Italic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Semibold */
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Semibold Italic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Bold Italic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Heavy */
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Heavy.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Text Heavy Italic.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   3. FONT FAMILY: San Francisco Mono (Code Blocks & Terminal Data)
+   ========================================================================== */
+
+/* Light */
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Light Italic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Regular Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Medium Italic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Semibold */
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Semibold Italic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Bold Italic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Heavy */
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Heavy.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'San Francisco Mono';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/San Francisco/San Francisco Mono Heavy Italic.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
