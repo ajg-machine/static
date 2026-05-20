@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-Regular.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-RegularItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-RegularItalic.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -20,7 +20,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-Medium.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -28,7 +28,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-MediumItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-MediumItalic.woff2') format('woff2');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -36,7 +36,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-Semibold.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-Semibold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -44,7 +44,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-SemiboldItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-SemiboldItalic.woff2') format('woff2');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -52,7 +52,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-Bold.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -60,7 +60,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-BoldItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-BoldItalic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
@@ -68,7 +68,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-Heavy.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-Heavy.woff2') format('woff2');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -76,7 +76,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-HeavyItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-HeavyItalic.woff2') format('woff2');
     font-weight: 800;
     font-style: italic;
     font-display: swap;
@@ -84,7 +84,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-Black.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -92,7 +92,7 @@
 
 @font-face {
     font-family: 'New York Small';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkSmall-BlackItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkSmall-BlackItalic.woff2') format('woff2');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -105,7 +105,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-Regular.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -113,7 +113,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-RegularItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-RegularItalic.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -121,7 +121,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-Medium.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -129,7 +129,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-MediumItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-MediumItalic.woff2') format('woff2');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -137,7 +137,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-Semibold.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-Semibold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -145,7 +145,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-SemiboldItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-SemiboldItalic.woff2') format('woff2');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -153,7 +153,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-Bold.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -161,7 +161,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-BoldItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-BoldItalic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
@@ -169,7 +169,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-Heavy.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-Heavy.woff2') format('woff2');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -177,7 +177,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-HeavyItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-HeavyItalic.woff2') format('woff2');
     font-weight: 800;
     font-style: italic;
     font-display: swap;
@@ -185,7 +185,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-Black.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -193,7 +193,7 @@
 
 @font-face {
     font-family: 'New York Medium';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkMedium-BlackItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkMedium-BlackItalic.woff2') format('woff2');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -206,7 +206,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-Regular.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -214,7 +214,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-RegularItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-RegularItalic.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -222,7 +222,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-Medium.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -230,7 +230,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-MediumItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-MediumItalic.woff2') format('woff2');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -238,7 +238,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-Semibold.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-Semibold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -246,7 +246,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-SemiboldItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-SemiboldItalic.woff2') format('woff2');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -254,7 +254,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-Bold.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -262,7 +262,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-BoldItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-BoldItalic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
@@ -270,7 +270,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-Heavy.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-Heavy.woff2') format('woff2');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -278,7 +278,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-HeavyItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-HeavyItalic.woff2') format('woff2');
     font-weight: 800;
     font-style: italic;
     font-display: swap;
@@ -286,7 +286,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-Black.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -294,7 +294,7 @@
 
 @font-face {
     font-family: 'New York Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkLarge-BlackItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkLarge-BlackItalic.woff2') format('woff2');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
@@ -307,7 +307,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-Regular.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -315,7 +315,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-RegularItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-RegularItalic.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -323,7 +323,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-Medium.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -331,7 +331,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-MediumItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-MediumItalic.woff2') format('woff2');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -339,7 +339,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-Semibold.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-Semibold.woff2') format('woff2');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -347,7 +347,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-SemiboldItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-SemiboldItalic.woff2') format('woff2');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
@@ -355,7 +355,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-Bold.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-Bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -363,7 +363,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-BoldItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-BoldItalic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
@@ -371,7 +371,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-Heavy.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-Heavy.woff2') format('woff2');
     font-weight: 800;
     font-style: normal;
     font-display: swap;
@@ -379,7 +379,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-HeavyItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-HeavyItalic.woff2') format('woff2');
     font-weight: 800;
     font-style: italic;
     font-display: swap;
@@ -387,7 +387,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-Black.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-Black.woff2') format('woff2');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -395,7 +395,7 @@
 
 @font-face {
     font-family: 'New York Extra Large';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/New York/NewYorkExtraLarge-BlackItalic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Apple/New York/NewYorkExtraLarge-BlackItalic.woff2') format('woff2');
     font-weight: 900;
     font-style: italic;
     font-display: swap;
