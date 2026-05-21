@@ -5,7 +5,7 @@
 /* Regular */
 @font-face {
     font-family: 'Helvetica Monospaced';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Monospaced/helvetica-monospaced-pro.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Monospaced/helvetica-monospaced-pro.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -14,7 +14,7 @@
 /* Regular Italic */
 @font-face {
     font-family: 'Helvetica Monospaced';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Monospaced/helvetica-monospaced-pro-italic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Monospaced/helvetica-monospaced-pro-italic.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
@@ -23,7 +23,7 @@
 /* Bold */
 @font-face {
     font-family: 'Helvetica Monospaced';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Monospaced/helvetica-monospaced-pro-bold.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Monospaced/helvetica-monospaced-pro-bold.woff2') format('woff2');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -32,7 +32,7 @@
 /* Bold Italic */
 @font-face {
     font-family: 'Helvetica Monospaced';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica Monospaced/helvetica-monospaced-pro-bold-italic.woff2') format('woff2');
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Monospaced/helvetica-monospaced-pro-bold-italic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
     font-display: swap;
