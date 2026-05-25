@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+*.egg-info/
+dist/
+build/
+.Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv
+.env
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Build & Bundling
+.next/
+out/
+.nuxt/
+dist/
+.cache/
+
+# Testing
+coverage/
+.pytest_cache/
+*.lcov
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+.temp/
+tmp/
+
+# Environment
+.env.local
+.env.*.local
