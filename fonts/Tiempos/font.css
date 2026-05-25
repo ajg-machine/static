@@ -1,0 +1,269 @@
+/* ==========================================================================
+   1. FONT FAMILY: Tiempos Fine (Optimized for Ultra-Large Display Sizes)
+   ========================================================================== */
+
+/* Fine Light */
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Light%20Italic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Fine Regular */
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Regular%20Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Fine Medium */
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Medium%20Italic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Fine Semibold */
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Semibold%20Italic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Fine Bold */
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Bold%20Italic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Fine Black */
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Fine';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Fine%20Black%20Italic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   2. FONT FAMILY: Tiempos Headline (Optimized for Large Display Sizes / Headings)
+   ========================================================================== */
+
+/* Headline Light */
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Light%20Italic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Headline Regular */
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Regular%20Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Headline Medium */
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Medium%20Italic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Headline Semibold */
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Semibold%20Italic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Headline Bold */
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Bold%20Italic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Headline Black */
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Headline%20Black%20Italic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   3. FONT FAMILY: Tiempos Text (Optimized for Small Body Text / Dense Layouts)
+   ========================================================================== */
+
+/* Text Regular */
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Text%20Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Text%20Regular%20Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Text Medium */
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Text%20Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Text%20Medium%20Italic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Text Semibold */
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Text%20Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Text%20Semibold%20Italic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Text Bold */
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Text%20Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Tiempos/Tiempos%20Text%20Bold%20Italic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
