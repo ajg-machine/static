@@ -1,25 +1,399 @@
 /* ==========================================================================
-   FONT FAMILY: Helvetica Now Variable (Verified Metadata)
+   1. FONT FAMILY: Helvetica Now Display (Optimized for Headings & Large UI)
    ========================================================================== */
 
-/* Upright / Roman Variable Axes */
+/* Hairline */
 @font-face {
-    font-family: 'Helvetica Now';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/Helvetica Now.woff2') format('woff2-variations'),
-         url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/Helvetica Now.woff2') format('woff2');
-    font-weight: 50 1000;
-    font-stretch: 50% 100%;
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-Hairline.woff2') format('woff2');
+    font-weight: 50;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-HairlineI.woff2') format('woff2');
+    font-weight: 50;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Thin */
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-ThinIta.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Extra Light */
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-ExtLt.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-ExtLtIta.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-LightIta.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-RegIta.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-MedIta.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-BoldIta.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Extra Bold */
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-ExtBdIta.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-BlackIta.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Extra Black */
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-ExtBlk.woff2') format('woff2');
+    font-weight: 1000;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Display';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowDisplay-ExtBlkIta.woff2') format('woff2');
+    font-weight: 1000;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   2. FONT FAMILY: Helvetica Now Text (Optimized for Body copy)
+   ========================================================================== */
+
+/* Thin */
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-ThinItem.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Extra Light */
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-ExtLtIta.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-RegIta.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Extra Bold */
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-ExtBdIta.woff2') format('woff2');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Black */
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowText-BlackItalic.woff2') format('woff2');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   3. FONT FAMILY: Helvetica Now Micro (Optimized for Small Captions/Labels)
+   ========================================================================== */
+
+/* Thin */
+@font-face {
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-RegIta.woff2') format('woff2'); /* Remapped from structural list intent */
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Extra Light */
+@font-face {
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-ExtLtIta.woff2') format('woff2');
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-Regular.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
-/* Italic Variable Axes */
+/* Medium */
 @font-face {
-    font-family: 'Helvetica Now';
-    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/Helvetica Now Italic.woff2') format('woff2-variations'),
-         url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/Helvetica Now Italic.woff2') format('woff2');
-    font-weight: 50 1000;
-    font-stretch: 50% 100%;
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-MedIta.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Extra Bold */
+@font-face {
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Helvetica Now Micro';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/Helvetica/Helvetica Now/HelveticaNowMicro-ExtBdIta.woff2') format('woff2');
+    font-weight: 800;
     font-style: italic;
     font-display: swap;
 }
