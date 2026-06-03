@@ -169,11 +169,11 @@
     font-display: swap;
 }
 
-/* Text Book (Regular Equivalent) */
+/* Text Book */
 @font-face {
     font-family: 'PP Neue Montreal Text';
     src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealText-Book.woff2') format('woff2');
-    font-weight: 400;
+    font-weight: 375;
     font-style: normal;
     font-display: swap;
 }
@@ -182,6 +182,24 @@
 @font-face {
     font-family: 'PP Neue Montreal Text';
     src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealText-BookItalic.woff2') format('woff2');
+    font-weight: 375;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Text Regular */
+@font-face {
+    font-family: 'PP Neue Montreal Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealText-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Text Italic */
+@font-face {
+    font-family: 'PP Neue Montreal Text';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/PPNeueMontrealText-Italic.woff2') format('woff2');
     font-weight: 400;
     font-style: italic;
     font-display: swap;
