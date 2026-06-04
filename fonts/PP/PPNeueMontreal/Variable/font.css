@@ -1,0 +1,48 @@
+/* ==========================================================================
+   1. FONT FAMILY: PP Neue Montreal Variable (Display / Headings)
+   ========================================================================== */
+
+/* Upright Axis Mapping (ital: 0) */
+@font-face {
+    font-family: 'PP Neue Montreal Variable';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/Variable/PPNeueMontreal-Variable.woff2') format('woff2-variations'),
+         url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/Variable/PPNeueMontreal-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic Axis Mapping (ital: 1) */
+@font-face {
+    font-family: 'PP Neue Montreal Variable';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/Variable/PPNeueMontreal-Variable.woff2') format('woff2-variations'),
+         url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/Variable/PPNeueMontreal-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+
+/* ==========================================================================
+   2. FONT FAMILY: PP Neue Montreal Text Variable (Body Copy / Dense UI)
+   ========================================================================== */
+
+/* Upright Axis Mapping (ital: 0) */
+@font-face {
+    font-family: 'PP Neue Montreal Text Variable';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/Variable/PPNeueMontrealText-Variable.woff2') format('woff2-variations'),
+         url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/Variable/PPNeueMontrealText-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic Axis Mapping (ital: 1) */
+@font-face {
+    font-family: 'PP Neue Montreal Text Variable';
+    src: url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/Variable/PPNeueMontrealText-Variable.woff2') format('woff2-variations'),
+         url('https://raw.githubusercontent.com/ajg-machine/static/main/fonts/PP/PPNeueMontreal/Variable/PPNeueMontrealText-Variable.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
